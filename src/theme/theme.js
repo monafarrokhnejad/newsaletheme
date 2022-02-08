@@ -101,42 +101,11 @@ export const bazarTheme = () => {
   console.log(pathname);
 
   switch (pathname) {
-    case "/":
-    case "/superstore-shop":
-    case "/grocery1":
     case "/grocery2":
-    case "/grocery3":
-    case "/fashion-shop":
-    case "/gadget-shop":
-      updateTheme(THEMES.DEFAULT);
-      break;
-
-    case "/furniture-shop":
-      updateTheme(THEMES.FURNITURE);
-      break;
-
-    case "/healthbeauty-shop":
-      updateTheme(THEMES.HEALTH);
-      break;
-
-    case "/gift-shop":
-      updateTheme(THEMES.GIFT);
-      break;
-
     default:
       themeOptions = themesOptions[publicRuntimeConfig.theme];
       break;
   }
-
-  ;
-  /*============ Remove above code ==============*/
-
-  /* Uncomment below line and set your theme, theme name reference: THEMES  */
-  // var themeOptions = themeOptions[THEMES.DEFAULT]
-  // // OR
-  // var themeOptions = themeOptions[THEMES.FURNITURE]
-  // // OR
-  // // Choose a different theme from THEMES object, also you can create your own theme
 
   let theme = createTheme(merge({}, themeOptions));
   theme = responsiveFontSizes(theme);
