@@ -1,59 +1,27 @@
 import React from 'react';
 
-import {makeStyles} from '@mui/styles';
-
 import FlexBox from '/src/components/FlexBox';
 import Login from '/src/components/sessions/Login';
-
-const useStyles = makeStyles({
-    root: {
-        height: "100vh",
-
-    },
-    box: {
-        height: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center"
-    },
-
-    "@media (min-width: 800px)": {
-        root: {
-            backgroundImage: `url("/vecBg.png") `,
-            overflow: "hidden",
-            background: '#f79621',
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "contain",
-            backgroundAttachment: 'fixed',
-            backgroundPosition: '0',
-            position: "relative"
-        },
-        box: {
-            margin: "0",
-            background: "#fff",
-            width: "700px",
-
-        }
-    },
-    "@media (max-width: 800px)": {
-        root: {
-            background: "#fff"
-        },
-        box: {
-            margin: "auto"
-        }
-    }
-});
+import Head from "next/head";
 
 const LoginPage = (props) => {
-    const classes = useStyles(props);
 
-    return <FlexBox className={classes.root} flexDirection="column" minHeight="100vh" justifyContent="center">
-        <div className={classes.box}>
-            <Login/>
-        </div>
+    return <>
+        <Head>
+            <title>صفحه ورود کاربر</title>
+            <meta charSet="utf-8"/>
+            <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+        </Head>
+        <FlexBox className={"login-box"} flexDirection="column" minHeight="100vh" justifyContent="center">
+            <div className={"login-box-inner"}>
+                <Login/>
+            </div>
+            <div className={'logo-login'}>
+                <img src={"/assets/images/logo-white.png"} alt={"logo"} width={300}/>
+            </div>
 
-    </FlexBox>;
+        </FlexBox>
+    </>
 };
 
 export default LoginPage;
