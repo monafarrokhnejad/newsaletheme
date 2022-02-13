@@ -1,9 +1,9 @@
+import React, { useEffect, useState } from "react";
 import { getSection4Products, getSection5Products, getSection7Products, getSection8Products, getSection9Testimonials } from "utils/api/grocery2-shop/carousels";
 import { getSection2Services, getSection3Categories, getSection6CardList } from "utils/api/grocery2-shop/sections";
 import { Box } from "@mui/material";
 import { useTheme } from "@mui/system";
 import SimpleBar from "simplebar-react";
-import React, { useEffect, useState } from "react";
 import GroceryLayout from "components/layout/GroceryLayout";
 import GroceryFooter from "components/grocery2/GroceryFooter";
 import GrocerySection1 from "components/grocery2/GrocerySection1";

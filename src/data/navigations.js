@@ -15,7 +15,7 @@ import TeddyBear from 'components/icons/TeddyBear';
 import Woman from 'components/icons/Woman';
 const navigations = [{
   icon: Dress,
-  title: 'Fashion',
+  title: 'مد',
   href: '/fashion',
   menuComponent: 'MegaMenu1',
   menuData: {
@@ -187,7 +187,7 @@ const navigations = [{
   }
 }, {
   icon: Laptop,
-  title: 'Electronics',
+  title: 'الکتریکی',
   href: '/product/search/electronics',
   menuComponent: 'MegaMenu1',
   menuData: {
@@ -359,24 +359,24 @@ const navigations = [{
   }
 }, {
   icon: MotorBike,
-  title: 'Bikes',
+  title: 'دوچرخه',
   href: '/product/search/bikes',
   menuComponent: 'MegaMenu2',
   menuData: [{
     icon: Man,
-    title: 'Man',
+    title: 'مردانه',
     href: '/product/search/fashion',
     megaMenu: 'MegaMenu1',
     menuData: {
       categories: [{
-        title: 'Man Clothes',
+        title: 'لباس مردانه',
         href: '/product/search/man-clothes',
         subCategories: [{
-          title: 'Shirt',
+          title: 'تیشرت',
           href: '/product/search/shirt',
           imgUrl: '/assets/images/products/categories/shirt.png'
         }, {
-          title: 'T- shirt',
+          title: 'ژاکت',
           href: '/product/search/t-shirt',
           imgUrl: '/assets/images/products/categories/t-shirt.png'
         }, {

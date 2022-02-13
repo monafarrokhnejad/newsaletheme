@@ -1,9 +1,9 @@
+import React, { Fragment, useEffect, useState } from "react";
 import { Box } from "@mui/material";
 import { useTheme } from "@mui/system";
 import appIcons from "components/icons";
 import SimpleBar from "simplebar-react";
 import FlexBox from "components/FlexBox";
-import React, { Fragment, useEffect, useState } from "react";
 import BazarCard from "components/BazarCard";
 import { Span } from "components/Typography";
 import NavLink from "components/nav-link/NavLink";
@@ -33,7 +33,7 @@ const Grocery2SideNav = props => {
     if (type === "parent") return childList.map(item => <Fragment key={item.title}>
           <NavLink href={item.href} color="grey.700">
             <FlexBox>
-              <Span ml="2rem" py={0.75} color="inherit" flex="1 1 0">
+              <Span mr="2.5rem" py={0.75} color="inherit" flex="1 1 0">
                 {item.title}
               </Span>
             </FlexBox>
@@ -42,7 +42,7 @@ const Grocery2SideNav = props => {
           {item.child && renderChild(item.child, "child")}
         </Fragment>);else return childList.map((item, ind) => <NavLink href={item.href} color="grey.700" key={ind}>
           <FlexBox key={item.title}>
-            <Span ml="3rem" py={0.75} color="inherit" flex="1 1 0">
+            <Span mr="3.5rem" py={0.75} color="inherit" flex="1 1 0">
               {item.title}
             </Span>
           </FlexBox>
@@ -69,7 +69,7 @@ const Grocery2SideNav = props => {
                       <NavLink href={item.href} color="grey.700">
                         <FlexBox alignItems="center" flex="1 1 0">
                           <Icon fontSize="small" />
-                          <Span color="inherit" fontWeight="600" mr={1.125} ml={1.5} flex="1 1 0">
+                          <Span color="inherit" fontWeight="600" mr={2.5}  flex="1 1 0">
                             {item.title}
                           </Span>
                         </FlexBox>
@@ -79,7 +79,7 @@ const Grocery2SideNav = props => {
                   {item.child ? renderChild(item.child) : null}
                 </Accordion> : <NavLink href={item.href} color="grey.700">
                   <FlexBox py={0.75} color="inherit" key={item.title}>
-                    <Box mr={1.5}>
+                    <Box ml={1.5}>
                       <Icon fontSize="small" />
                     </Box>
                     <Span color="inherit" fontWeight="600" mr={1.125} flex="1 1 0">

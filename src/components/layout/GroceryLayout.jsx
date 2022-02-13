@@ -1,15 +1,18 @@
+import React, { Fragment, useCallback, useState } from "react";
+
 import Head from "next/head";
+
 import { Box } from "@mui/material";
+
 import Navbar from "components/navbar/Navbar";
 import Sticky from "components/sticky/Sticky";
 import Topbar from "components/topbar/Topbar";
 import GroceryHeader from "components/header/GroceryHeader";
-import React, { Fragment, useCallback, useState } from "react";
 
 const GroceryLayout = ({
   children,
   showNavbar = true,
-  title = "React Next.js Ecommerce Template"
+  title = "سامانه فروش حاصل نوین"
 }) => {
   const [isFixed, setIsFixed] = useState(false);
   const toggleIsFixed = useCallback(fixed => {
@@ -17,9 +20,9 @@ const GroceryLayout = ({
   }, []);
   return <Fragment>
       <Head>
-        <title>{title}</title>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          <title>{title}</title>
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
       <Topbar />

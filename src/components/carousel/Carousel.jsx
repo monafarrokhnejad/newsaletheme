@@ -32,7 +32,7 @@ const Carousel = ({
   dotGroupMarginTop,
   naturalSlideHeight
 }) => {
-  return <StyledCarouselProvider sx={sx} step={step} spacing={spacing} interval={interval} infinite={infinite} isPlaying={autoPlay} totalSlides={totalSlides} currentSlide={currentSlide} visibleSlides={visibleSlides} hasMasterSpinner={hasMasterSpinner} isIntrinsicHeight={isIntrinsicHeight} naturalSlideWidth={naturalSlideWidth || 100} naturalSlideHeight={naturalSlideHeight || 125}>
+  return <StyledCarouselProvider style={{direction: "ltr"}} sx={sx} step={step} spacing={spacing} interval={interval} infinite={infinite} isPlaying={autoPlay} totalSlides={totalSlides} currentSlide={currentSlide} visibleSlides={visibleSlides} hasMasterSpinner={hasMasterSpinner} isIntrinsicHeight={isIntrinsicHeight} naturalSlideWidth={naturalSlideWidth || 100} naturalSlideHeight={naturalSlideHeight || 125}>
       <StyledSlider spacing={spacing}>
         {React.Children.map(children, (child, ind) => <Slide index={ind}>{child}</Slide>)}
       </StyledSlider>

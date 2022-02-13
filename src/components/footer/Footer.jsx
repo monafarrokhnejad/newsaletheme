@@ -38,7 +38,7 @@ const Footer = () => {
               <Grid item lg={4} md={6} sm={6} xs={12}>
                 <Link href="/">
                   <a>
-                    <Image mb={2.5} src="/assets/images/logo-white.svg" alt="logo" />
+                    <Image width={200} mb={2.5} src="/assets/images/logo.png" alt="logo" />
                   </a>
                 </Link>
 
@@ -53,7 +53,7 @@ const Footer = () => {
 
               <Grid item lg={2} md={6} sm={6} xs={12}>
                 <Box fontSize="25px" fontWeight="600" mb={2.5} lineHeight="1" color="white">
-                  About Us
+                  درباره ما
                 </Box>
 
                 <div>
@@ -77,16 +77,16 @@ const Footer = () => {
 
               <Grid item lg={3} md={6} sm={6} xs={12}>
                 <Box fontSize="25px" fontWeight="600" mb={2.5} lineHeight="1" color="white">
-                  Contact Us
+                  تماس با ما
                 </Box>
                 <Box py={0.6} color="grey.500">
-                  70 Washington Square South, New York, NY 10012, United States
+                   سازمان آب غربی، گلستان دوم، پلاک سه<br/> طبقه چهار واحد نه
                 </Box>
                 <Box py={0.6} color="grey.500">
-                  Email: uilib.help@gmail.com
+                  ایمیل: haselnovin@gmail.com
                 </Box>
                 <Box py={0.6} mb={2} color="grey.500">
-                  Phone: +1 1123 456 780
+                  تلفن تماس: 021667687
                 </Box>
 
                 <FlexBox className="flex" mx={-0.625}>

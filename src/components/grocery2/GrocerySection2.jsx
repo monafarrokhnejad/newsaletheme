@@ -29,7 +29,7 @@ const GrocerySection2 = ({
       const Icon = appIcons[item.icon];
       return <Grid item lg={4} xs={6} key={ind}>
               <StyledFlexBox alignItems="center">
-                <FlexBox alignItems="center" color="grey.600" fontSize="50px" mr={2}>
+                <FlexBox alignItems="center" color="grey.600" fontSize="50px" ml={2}>
                   <Icon fontSize="50px" color="grey.600">
                     {item.icon}
                   </Icon>

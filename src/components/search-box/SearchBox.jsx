@@ -14,7 +14,7 @@ export const SearchOutlinedIcon = styled(SearchOutlined)(({
   theme
 }) => ({
   color: theme.palette.grey[600],
-  marginRight: 6
+  marginLeft: 6
 })); // also used in the GrocerySearchBox component
 
 export const SearchResultCard = styled(Card)(() => ({
@@ -76,11 +76,11 @@ const SearchBox = () => {
   return <Box position="relative" flex="1 1 0" maxWidth="670px" mx="auto" {...{
     ref: parentRef
   }}>
-      <TextField variant="outlined" placeholder="Searching for..." fullWidth onChange={hanldeSearch} InputProps={{
+      <TextField variant="outlined" placeholder="" fullWidth onChange={hanldeSearch} InputProps={{
       sx: {
         height: 44,
         borderRadius: 300,
-        paddingRight: 0,
+        paddingLeft: 0,
         color: "grey.700",
         overflow: "hidden",
         "&:hover .MuiOutlinedInput-notchedOutline": {

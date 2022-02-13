@@ -36,7 +36,7 @@ const GrocerySection3 = ({
                 <a>
                   <StyledBazarCard hoverEffect>
                     <LazyImage src={item.imgUrl} height={46} width={46} objectFit="contain" />
-                    <Box ml="2rem">
+                    <Box mr="2rem">
                       <Tiny color="primary.main">{item.subtitle}</Tiny>
                       <H5>{item.title}</H5>
                     </Box>

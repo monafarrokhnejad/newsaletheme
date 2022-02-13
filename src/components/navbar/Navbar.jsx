@@ -9,12 +9,14 @@ import navbarNavigations from "data/navbarNavigations";
 import ArrowRight from "@mui/icons-material/ArrowRight";
 import ChevronRight from "@mui/icons-material/ChevronRight";
 import { Box, Container, MenuItem, styled } from "@mui/material";
-import React from "react"; // component props interface
+import React from "react";
+import {ChevronLeft} from "@mui/icons-material"; // component props interface
 
 // const common css style
 const navLinkStyle = {
   cursor: "pointer",
-  marginRight: "2rem",
+  marginLeft: "1rem",
+  marginRight: "1rem",
   transition: "color 150ms ease-in-out",
   "&:hover": {
     color: "primary.main"
@@ -40,8 +42,9 @@ const ParentNavItem = styled(Box)(() => ({
   display: "none",
   position: "absolute",
   top: 0,
-  left: "100%",
-  zIndex: 5
+  right: "100%",
+  zIndex: 5,
+    paddingRight:'8px'
 }));
 const NavBarWrapper = styled(BazarCard)(({
   theme
@@ -134,10 +137,10 @@ const Navbar = ({
           <CategoryMenu open={navListOpen}>
             <CategoryMenuButton variant="text">
               <Category fontSize="small" />
-              <Paragraph fontWeight="600" textAlign="left" flex="1 1 0" ml={1.25} color="grey.600">
-                Categories
+              <Paragraph fontWeight="600" textAlign="right" flex="1 1 0" mr={1.25} color="grey.600">
+                دسته بندی محصولات
               </Paragraph>
-              <ChevronRight className="dropdown-icon" fontSize="small" />
+              <ChevronLeft className="dropdown-icon" fontSize="small" />
             </CategoryMenuButton>
           </CategoryMenu>
           <FlexBox>{renderNestedNav(navbarNavigations, true)}</FlexBox>

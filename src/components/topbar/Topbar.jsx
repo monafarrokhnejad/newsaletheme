@@ -1,30 +1,36 @@
+import React from 'react';
+import Link from 'next/link';
 import Image from 'components/BazarImage';
-import BazarMenu from 'components/BazarMenu';
+// import BazarMenu from 'components/BazarMenu';
 import FlexBox from 'components/FlexBox';
 import NavLink from 'components/nav-link/NavLink';
 import { Span } from 'components/Typography';
 import CallOutlined from '@mui/icons-material/CallOutlined';
-import ExpandMore from '@mui/icons-material/ExpandMore';
+// import ExpandMore from '@mui/icons-material/ExpandMore';
 import MailOutline from '@mui/icons-material/MailOutline';
 import { Container, MenuItem } from '@mui/material';
-import TouchRipple from '@mui/material/ButtonBase';
-import { styled } from '@mui/material/styles';
+// import TouchRipple from '@mui/material/ButtonBase';
 import { layoutConstant } from 'utils/constants';
-import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import { styled } from '@mui/material/styles';
+
+
 const TopbarWrapper = styled('div')(({
   theme
 }) => ({
   background: theme.palette.secondary.main,
-  color: theme.palette.secondary.contrastText,
+  // color: theme.palette.secondary.contrastText,
+  color: "white",
   height: layoutConstant.topbarHeight,
   fontSize: 12,
+  '@media only screen and (min-width: 900px)': {
+    direction:"ltr",
+  },
   '& .topbarLeft': {
     '& .logo': {
-      display: 'none'
+      display: 'none',
     },
     '& .title': {
-      marginLeft: '10px'
+      marginLeft: '5px',
     },
     '@media only screen and (max-width: 900px)': {
       '& .logo': {
@@ -37,8 +43,10 @@ const TopbarWrapper = styled('div')(({
   },
   '& .topbarRight': {
     '& .link': {
-      paddingRight: 30,
-      color: theme.palette.secondary.contrastText
+      paddingLeft: 30,
+      // color: theme.palette.secondary.contrastText
+      color: "white",
+      fontWeight: "bold"
     },
     '@media only screen and (max-width: 900px)': {
       '& .link': {
@@ -68,21 +76,6 @@ const TopbarWrapper = styled('div')(({
 }));
 
 const Topbar = () => {
-  const [currency, setCurrency] = useState(currencyList[0]);
-  const [language, setLanguage] = useState(languageList[0]);
-
-  const handleCurrencyClick = curr => () => {
-    setCurrency(curr);
-  };
-
-  const handleLanguageClick = lang => () => {
-    console.log(lang);
-    setLanguage(lang);
-  };
-
-  useEffect(() => {// get language from browser
-    // console.log(navigator.language);
-  }, []);
   return <TopbarWrapper>
       <Container sx={{
       display: 'flex',
@@ -93,71 +86,30 @@ const Topbar = () => {
         <FlexBox className="topbarLeft" alignItems="center">
           <div className="logo">
             <Link href="/">
-              <Image display="block" height="28px" src="/assets/images/logo-white.svg" alt="logo" />
+              <Image display="block" height="28px" src="/assets/images/logo.png" alt="logo" />
             </Link>
           </div>
 
-          <FlexBox alignItems="center">
+          <FlexBox alignItems="center" style={{marginLeft:"8px"}}>
             <CallOutlined fontSize="small" />
-            <Span className="title">+88012 3456 7894</Span>
+            <Span className="title">66564578</Span>
           </FlexBox>
           <FlexBox alignItems="center" ml={2.5}>
             <MailOutline fontSize="small" />
-            <Span className="title">support@ui-lib.com</Span>
+            <Span className="title">haselnovin@gmail.com</Span>
           </FlexBox>
         </FlexBox>
 
         <FlexBox className="topbarRight" alignItems="center">
           <NavLink className="link" href="/faq">
-            Theme FAQ"s
+            سوالات شما؟
           </NavLink>
           <NavLink className="link" href="/help">
-            Need Help?
+            نیاز به کمک دارید؟
           </NavLink>
-
-          <BazarMenu handler={<TouchRipple className="handler marginRight">
-                <Span className="menuTitle">{language.title}</Span>
-                <ExpandMore fontSize="inherit" />
-              </TouchRipple>}>
-            {languageList.map(item => <MenuItem className="menuItem" key={item.title} onClick={handleLanguageClick(item)}>
-                <Span className="menuTitle">{item.title}</Span>
-              </MenuItem>)}
-          </BazarMenu>
-
-          <BazarMenu direction="right" handler={<TouchRipple className="handler">
-                <Span className="menuTitle">{currency.title}</Span>
-                <ExpandMore fontSize="inherit" />
-              </TouchRipple>}>
-            {currencyList.map(item => <MenuItem className="menuItem" key={item.title} onClick={handleCurrencyClick(item)}>
-                <Span className="menuTitle">{item.title}</Span>
-              </MenuItem>)}
-          </BazarMenu>
         </FlexBox>
       </Container>
     </TopbarWrapper>;
 };
 
-const languageList = [{
-  title: 'EN',
-  imgUrl: '/assets/images/flags/usa.png'
-}, {
-  title: 'BN',
-  imgUrl: '/assets/images/flags/bd.png'
-}, {
-  title: 'HN',
-  imgUrl: '/assets/images/flags/in.png'
-}];
-const currencyList = [{
-  title: 'USD',
-  imgUrl: '/assets/images/flags/usa.png'
-}, {
-  title: 'EUR',
-  imgUrl: '/assets/images/flags/uk.png'
-}, {
-  title: 'BDT',
-  imgUrl: '/assets/images/flags/bd.png'
-}, {
-  title: 'INR',
-  imgUrl: '/assets/images/flags/in.png'
-}];
 export default Topbar;

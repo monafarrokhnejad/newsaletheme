@@ -1,7 +1,8 @@
 import FlexBox from 'components/FlexBox';
 import ChevronRight from '@mui/icons-material/ChevronRight';
 import { styled } from '@mui/material/styles';
-import React from 'react'; // Component Props interface
+import React from 'react';
+import {ChevronLeft} from "@mui/icons-material"; // Component Props interface
 
 // styled components
 const StyledFlexBox = styled(({
@@ -28,7 +29,7 @@ const AccordionHeader = ({
 }) => {
   return <StyledFlexBox open={open} sx={sx} {...props}>
       {children}
-      {showIcon && <ChevronRight className="caretIcon" fontSize="small" />}
+      {showIcon && <ChevronLeft className="caretIcon" fontSize="small" />}
     </StyledFlexBox>;
 };
 

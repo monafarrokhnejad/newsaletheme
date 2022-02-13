@@ -30,7 +30,7 @@ const StyledBazarCard = styled(BazarCard)(({
   transition: "all 250ms ease-in-out",
   borderRadius: "8px",
   "&:hover": {
-    boxShadow: theme.shadows[2],
+    // boxShadow: theme.shadows[2],
     "& .css-1i2n18j": {
       display: "flex"
     },
@@ -51,7 +51,7 @@ const ImageWrapper = styled(Box)(({
 }));
 const ImageBox = styled(Box)(() => ({
   padding: "44px 40px",
-  background: "#efefef"
+  background: "#fff"
 }));
 const ItemController = styled(Box)(({
   theme
@@ -107,7 +107,8 @@ const StyledChip = styled(Chip)(() => ({
   paddingRight: 3,
   top: "10px",
   left: "10px",
-  zIndex: 11
+  zIndex: 11,
+  color:"white"
 }));
 const HoverIconWrapper = styled(Box)(({
   theme
@@ -232,7 +233,7 @@ const ProductCard13 = props => {
               </a>
             </Link>
 
-            {!hideRating && <Box display="flex" alignItems="center">
+            {!hideRating && <Box display="flex" alignItems="center" style={{margin: '8px 0 '}}>
                 <BazarRating value={rating || 0} color="warn" readOnly />{" "}
                 <Span sx={{
               color: palette.grey[600]

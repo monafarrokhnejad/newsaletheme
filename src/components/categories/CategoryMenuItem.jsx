@@ -1,7 +1,8 @@
 import ChevronRight from "@mui/icons-material/ChevronRight";
 import { Box, MenuItem, styled } from "@mui/material";
 import Link from "next/link";
-import React from "react"; // component props interface
+import React from "react";
+import {ChevronLeft} from "@mui/icons-material"; // component props interface
 
 //styled component
 const Wrapper = styled(Box)(({
@@ -17,7 +18,7 @@ const Wrapper = styled(Box)(({
     whiteSpace: "pre",
     transition: "all 250ms ease-in-out",
     "& .title": {
-      paddingLeft: "0.75rem",
+      paddingRight: "0.75rem",
       flexGrow: 1
     }
   },
@@ -44,7 +45,7 @@ const CategoryMenuItem = ({
         <MenuItem className="category-dropdown-link">
           {rest.icon && <rest.icon fontSize="small" color="inherit" />}
           <span className="title">{title}</span>
-          {caret && <ChevronRight fontSize="small" />}
+          {caret && <ChevronLeft fontSize="small" />}
         </MenuItem>
       </Link>
       {children}
