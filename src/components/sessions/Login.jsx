@@ -82,8 +82,9 @@ const Login = () => {
   const handleFormSubmit = async values => {
     console.log(values)
     try {
-      const {data} = await axios.post(`${SERVER_URL}/paneladmin/login/`, values); // router.push("/profile");
-      console.log(data);
+      const {
+        data
+      } = await axios.post(`${SERVER_URL}/auth/login`, values); // router.push("/profile");
 
     } catch (error) {
       console.log(error.response.data.message);
@@ -111,11 +112,11 @@ const Login = () => {
         <H3 textAlign="center" mb={1}>به سامانه فروش حاصل نوین خوش آمدید</H3>
         <Small fontWeight="600" fontSize="12px" color="grey.800" textAlign="center" mb={4.5} display="block">با ایمیل و رمز عبور خود وارد شوید</Small>
 
-        <BazarTextField mb={1.5} name="username" label="نام کاربری خود را وارد کنید" placeholder="نام کاربری" variant="outlined"
+        <BazarTextField mb={1.5} name="username" label="نام کاربری " placeholder="نام کاربری خودرا وارد کنید" variant="outlined"
                         size="small" type="text" fullWidth onBlur={handleBlur} onChange={handleChange}
                         value={values.username || ""} error={!!touched.username && !!errors.username} helperText={touched.username && errors.username} />
 
-        <BazarTextField mb={2} name="password" label="Password" placeholder="*********" autoComplete="on" type={passwordVisibility ? "text" : "password"}
+        <BazarTextField mb={2} name="password" label="رمزعبور" placeholder=" ********* خودرا وارد کنید" autoComplete="on" type={passwordVisibility ? "text" : "password"}
                         variant="outlined" size="small" fullWidth InputProps={{endAdornment: <IconButton size="small" type="button" onClick={togglePasswordVisibility}>
                 {passwordVisibility ? <Visibility className="passwordEye" fontSize="small" /> : <VisibilityOff className="passwordEye" fontSize="small" />}
               </IconButton>
@@ -124,64 +125,14 @@ const Login = () => {
 
         <BazarButton variant="contained" color="primary" type="submit" fullWidth sx={{mb: "1.65rem", height: 44}}>ورود</BazarButton>
 
-
-
-
-
-
-
-
-
-
-
-        <Box mb={2}>
-          <Box width="200px" mx="auto">
-            <Divider />
-          </Box>
-
-          <FlexBox justifyContent="center" mt={-1.625}>
-            <Box color="grey.600" bgcolor="background.paper" px={2}>
-              or
-            </Box>
-          </FlexBox>
-        </Box>
-
-        <BazarButton className="facebookButton" size="medium" fullWidth sx={{
-        mb: "10px",
-        height: 44
-      }}>
-          <Image src="/assets/images/icons/facebook-filled-white.svg" alt="facebook" />
-          <Box fontSize="12px" mr={1}>
-            Continue with Facebook
-          </Box>
-        </BazarButton>
-        <BazarButton className="googleButton" size="medium" fullWidth sx={{
-        height: 44
-      }}>
-          <Image src="/assets/images/icons/google-1.svg" alt="facebook" />
-          <Box fontSize="12px" mr={1}>
-            Continue with Google
-          </Box>
-        </BazarButton>
-
-        <FlexBox justifyContent="center" alignItems="center" my="1.25rem">
-          <Box>Don’t have account?</Box>
-          <Link href="/signup">
-            <a>
-              <H6 ml={1} borderBottom="1px solid" borderColor="grey.900">
-                Sign Up
-              </H6>
-            </a>
-          </Link>
-        </FlexBox>
       </form>
 
       <FlexBox justifyContent="center" bgcolor="grey.200" py={2.5}>
-        Forgot your password?
+        رمز عبور خودرا فراموش کرده اید ؟
         <Link href="/">
           <a>
             <H6 ml={1} borderBottom="1px solid" borderColor="grey.900">
-              Reset It
+              بازیابی کنید
             </H6>
           </a>
         </Link>
@@ -194,7 +145,7 @@ const initialValues = {
   password: ""
 };
 const formSchema = yup.object().shape({
-  username: yup.string().required("${path} را وارد کنید"),
-  password: yup.string().required("${path} را وارد کنید")
+  username: yup.string().required("${path} خالی است"),
+  password: yup.string().required("${path} خالی است")
 });
 export default Login;

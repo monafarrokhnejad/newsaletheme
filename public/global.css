@@ -1,0 +1,113 @@
+@font-face {
+    font-family: 'Shabnam';
+    src: url("/fonts/a074a415cfe0e4f57e2ede996a73d0e509c0ea194c9678c7b87c65fb977907e7.woff2") format("woff2");
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Shabnam';
+    src: url("/fonts/87cf5dde711a284c1e25dd414d51a571b7c9aedd91b2b96f9d679869f5d65162.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Shabnam';
+    src: url("/fonts/540d3f4e172bd6b5c70dd06bce57e055ce59270e95ea642b414fe0709faaa085.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Shabnam';
+    src: url("/fonts/fd5931f57e84baad81cc7243cfc1c83e5ac7f5dd17818d917765063544a54441.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Shabnam';
+    src: url("/fonts/1ff187f5320ec4527ebb6a71831b88289a6cb18ca33ac34476b96960f0af7282.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@media (max-width: 1300px) {
+    .login-box {
+        background-color: #f68e1f;
+        height: 100vh;
+        background-image: none;
+        overflow: hidden;
+    }
+}
+
+@media (min-width: 1300px) {
+
+    .login-box {
+        background-color: #f68e1f;
+        height: 100vh;
+        background-image: url("vecBg.png");
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-attachment: fixed;
+        background-position: 0;
+    }
+
+    .login-box-inner {
+        background-color: white;
+        width: 700px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+}
+
+@media (max-width: 1300px) {
+    .login-box-inner {
+        background-color: white;
+        max-width: 500px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: max-content;
+        margin: auto;
+        border-radius: 7px;
+        box-shadow: 0 0 5px gray;
+    }
+}
+
+.logo-login {
+    position: absolute;
+}
+
+@media (max-width: 1380px) {
+    .logo-login {
+        display: none;
+    }
+}
+
+@media (min-width: 1380px) {
+    .logo-login {
+        left: 27%
+    }
+}
+
+@media (min-width: 1510px) {
+    .logo-login {
+        left: 30%
+    }
+}
+
+.login-box {
+    overflow: hidden !important;
+
+    background-color: #f68e1f;
+    height: 100%;
+}
+p{
+    text-align: right !important;
+}
+.css-ptiqhd-MuiSvgIcon-root{
+    transform: rotate(180deg);
+}
