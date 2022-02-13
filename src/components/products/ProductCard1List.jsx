@@ -15,7 +15,7 @@ const ProductCard1List = () => {
 
       <FlexBox flexWrap="wrap" justifyContent="space-between" alignItems="center" mt={4}>
         <Span color="grey.600">Showing 1-9 of 1.3k Products</Span>
-        <Pagination count={10} variant="outlined" color="primary" />
+        <Pagination dir={"ltr"} count={10} variant="outlined" color="primary" />
       </FlexBox>
     </div>;
 };

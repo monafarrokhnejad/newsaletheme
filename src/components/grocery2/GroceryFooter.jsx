@@ -44,7 +44,7 @@ const GrocerFooter = () => {
     }}>
         <Link href="/">
           <a>
-            <BazarImage mb={2.5} src="/assets/images/logo-white.svg" alt="logo" />
+            <BazarImage width={200} mb={2.5} src="/assets/images/logo.png" alt="logo" />
           </a>
         </Link>
         <Grid container spacing={6}>

@@ -52,7 +52,7 @@ const TopbarStyle = styled("div")(({
   },
   menuTitle: {
     fontSize: 12,
-    marginLeft: "0.5rem",
+    marginRight: "0.5rem",
     fontWeight: 600
   },
   menuItem: {

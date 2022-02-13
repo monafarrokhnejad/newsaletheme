@@ -6,10 +6,11 @@ const Wrapper = styled(Box)(({
 }) => ({
   display: 'none',
   position: 'absolute',
-  left: '100%',
-  right: 'auto',
+  right: '100%',
+  left: 'auto',
   top: 0,
   zIndex: 99,
+  marginRight: '10px',
   '& .title-link, & .child-link': {
     color: 'inherit',
     fontWeight: 600,
@@ -21,7 +22,7 @@ const Wrapper = styled(Box)(({
   },
   '& .mega-menu-content': {
     padding: '0.5rem 0px',
-    marginLeft: '1rem',
+    marginRight: '10px',
     borderRadius: 4,
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[3],

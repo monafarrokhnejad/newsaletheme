@@ -1,5 +1,8 @@
-const navbarNavigations = [{
-  title: "Home",
+const navbarNavigations = [ {
+  title: "صفحه اصلی",
+  url: "/"
+},{
+  title: "خانه",
   child: [{
     title: "Super Store",
     url: "/superstore-shop"
@@ -29,7 +32,7 @@ const navbarNavigations = [{
     url: "/gadget-shop"
   }]
 }, {
-  title: "Pages",
+  title: "صفحات",
   child: [{
     title: "Sale Page",
     child: [{
@@ -71,7 +74,7 @@ const navbarNavigations = [{
     }]
   }]
 }, {
-  title: "User Account",
+  title: "صفحه شخصی",
   child: [{
     title: "Orders",
     child: [{
@@ -113,7 +116,7 @@ const navbarNavigations = [{
     url: "/wish-list"
   }]
 }, {
-  title: "Vendor Account",
+  title: "صفحه فروشنده",
   child: [{
     title: "Dashboard",
     url: "/vendor/dashboard"
@@ -139,8 +142,5 @@ const navbarNavigations = [{
     title: "Profile",
     url: "/vendor/account-settings"
   }]
-}, {
-  title: "Back to Demos",
-  url: "/"
 }];
 export default navbarNavigations;

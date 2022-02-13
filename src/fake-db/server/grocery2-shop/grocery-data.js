@@ -1,10 +1,10 @@
 export const serviceList = [{
   icon: "Truck",
-  title: "Fast Delivery",
-  subtitle: "Start from $10"
+  title: "تحویل فوری",
+  subtitle: "شروع از 10 تومان"
 }, {
   icon: "FeedbackThumbsUp",
-  title: "Feedback",
+  title: "فیدبک",
   subtitle: "97% positive"
 }, {
   icon: "Shield",
@@ -13,8 +13,8 @@ export const serviceList = [{
 }];
 export const shopByCategory = [{
   imgUrl: "/assets/images/icons/healthy-food.svg",
-  title: "Fruits & Vegatables",
-  subtitle: "Upto 60% off",
+  title: "میوه و سبزیجات",
+  subtitle: "60% تخفیف",
   url: "/"
 }, {
   imgUrl: "/assets/images/icons/fish.svg",
@@ -43,8 +43,8 @@ export const shopByCategory = [{
   url: "/"
 }];
 export const carouselCardList = [{
-  title: "25% Special Off Today Only for Vegetables",
-  subtitle: "Till 10 Sept, 2021",
+  title: "ّلورم ایپسوم برای تست تم وبسایت",
+  subtitle: "تا 10 ستامبر 2021",
   imgUrl: "/assets/images/products/kisspng-organic-food-leaf-vegetable-fruit-rich-vegetables-5aa9f4d026ae09 1.png",
   shopUrl: "/",
   bgColor: "#F6FFE5"
@@ -62,8 +62,8 @@ export const carouselCardList = [{
   bgColor: "#F6FFE5"
 }];
 export const testimonialList = [{
-  clientName: "Jonathon Doe",
-  comment: "Satisfied by their professionalism ! Got my tea bags in time. Didn't have to pay any delivery charge. I can't believe that. Keep it up !",
+  clientName: "مونا فرخ نژاد",
+  comment: "هر کامنتی که میشه گذاشت!",
   photoUrl: "/assets/images/faces/7.png"
 }, {
   clientName: "Jonathon Doe",
@@ -76,81 +76,38 @@ export const testimonialList = [{
 }];
 export const grocery2Navigations = [{
   icon: "Carrot",
-  title: "Vegetables",
+  title: "سبزیجات",
   href: "/product/search/vegetables"
 }, {
   icon: "Apple",
-  title: "Fruits & Vegetables",
+  title: "میوه و سبزیجات",
   href: "/product/search/Fruits & Vegetables",
   child: [{
-    title: "Fresh Frutes",
+    title: "میوه های تازه",
     href: "/product/search/Fresh Frutes",
     child: [{
-      title: "Pears, apples, quinces",
+      title: "سیب و هلو و پرتقال",
       href: "/product/search/Pears, apples, quinces"
     }, {
-      title: "Peaches, plums, apricots",
+      title: "هندوانه و طالبی و خربزه",
       href: "/product/search/Peaches, plums, apricots"
-    }, {
-      title: "Grapes",
-      href: "/product/search/Grapes"
     }]
   }, {
-    title: "Fresh Vegetables",
+    title: "سبزیجات تازه",
     href: "/product/search/Fresh Vegetables",
     child: [{
-      title: "Onion",
+      title: "پیاز",
       href: "/product/search/Onion"
     }, {
-      title: "Potato",
+      title: "گوجه",
       href: "/product/search/Potato"
     }, {
-      title: "Vegetable Pack",
+      title: "پک بسته بندی",
       href: "/product/search/Vegetable Pack"
     }]
   }]
 }, {
   icon: "Milk",
-  title: "Dariry & Eggs",
+  title: "لبنیات و تخم مرغ",
   href: "/product/search/Dariry & Eggs"
-}, {
-  icon: "Breakfast",
-  title: "Breakfast",
-  href: "/product/search/Breakfast"
-}, {
-  icon: "Yogurt",
-  title: "Frozen",
-  href: "/product/search/Frozen"
-}, {
-  icon: "Honey",
-  title: "Organic",
-  href: "/product/search/Organic"
-}, {
-  icon: "Beer",
-  title: "Canned Food",
-  href: "/product/search/Canned Food"
-}, {
-  icon: "Snack",
-  title: "Coffee & Snacks",
-  href: "/product/search/Coffee & Snacks"
-}, {
-  icon: "Bottle",
-  title: "Sauces & Jems",
-  href: "/product/search/Sauces & Jems"
-}, {
-  icon: "Honey",
-  title: "Organic",
-  href: "/product/search/Organic"
-}, {
-  icon: "Beer",
-  title: "Canned Food",
-  href: "/product/search/Canned Food"
-}, {
-  icon: "Snack",
-  title: "Coffee & Snacks",
-  href: "/product/search/Coffee & Snacks"
-}, {
-  icon: "Bottle",
-  title: "Sauces & Jems",
-  href: "/product/search/Sauces & Jems"
 }];

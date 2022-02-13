@@ -1630,7 +1630,7 @@ export default [{
   imgGroup: ["/assets/images/products/Groceries/3.PremiumGroceryPack.png", "/assets/images/products/Groceries/3.PremiumGroceryPack.png", "/assets/images/products/Groceries/3.PremiumGroceryPack.png"]
 }, {
   price: 145,
-  title: "Fresh&Real CHole Masala",
+  title: "تازه و فرش ماسالای",
   imgUrl: "/assets/images/products/Groceries/4.FreashRealCholeMasala.png",
   category: "groceries",
   discount: 8,

@@ -43,10 +43,10 @@ const ProductCard7 = ({
             </Span>
           </a>
         </Link>
-        <Box position="absolute" right="1rem" top="1rem">
+        <Box position="absolute" left="1rem" top="1rem">
           <IconButton size="small" sx={{
           padding: '4px',
-          ml: '12px'
+          mr: '12px'
         }} onClick={handleCartAmountChange(0)}>
             <Close fontSize="small" />
           </IconButton>

@@ -17,7 +17,7 @@ const ProductFilterCard = () => {
             <AccordionHeader px={0} py={0.75} color="grey.600">
               <Span sx={{
           cursor: 'pointer',
-          mr: '9px'
+          ml: '9px'
         }}>{item.title}</Span>
             </AccordionHeader>
             {item.subCategories.map(name => <Paragraph fontSize="14px" color="grey.600" pl="22px" py={0.75} key={name} sx={{

@@ -1,19 +1,26 @@
+import React, { useCallback, useState } from 'react';
+
+import * as yup from 'yup';
+import { useFormik } from 'formik';
+
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+
+import axios from 'axios';
+import { SERVER_URL } from 'constant';
+
 import BazarButton from 'components/BazarButton';
 import Image from 'components/BazarImage';
 import BazarTextField from 'components/BazarTextField';
 import FlexBox from 'components/FlexBox';
 import { H3, H6, Small } from 'components/Typography';
+
+import { Box, Card, Checkbox, Divider, FormControlLabel, IconButton } from '@mui/material';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import { Box, Card, Checkbox, Divider, FormControlLabel, IconButton } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { useFormik } from 'formik';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import React, { useCallback, useState } from 'react';
-import * as yup from 'yup';
-import axios from 'axios';
-import { SERVER_URL } from 'constant';
+
+
 const fbStyle = {
   background: '#3B5998',
   color: 'white'
@@ -58,14 +65,20 @@ const StyledCard = styled(({
   }
 }));
 
+
+
+
 const Signup = () => {
   const [passwordVisibility, setPasswordVisibility] = useState(false);
   const router = useRouter();
+
   const togglePasswordVisibility = useCallback(() => {
     setPasswordVisibility(visible => !visible);
   }, []);
 
   const handleFormSubmit = async values => {
+    console.log(values);
+
     try {
       const name = values.name.split(' ');
       const {

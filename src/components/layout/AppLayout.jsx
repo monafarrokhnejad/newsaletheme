@@ -5,11 +5,12 @@ import Sticky from "components/sticky/Sticky";
 import Topbar from "components/topbar/Topbar";
 import Head from "next/head";
 import React, { Fragment, useCallback, useState } from "react";
+import GroceryHeader from "../header/GroceryHeader";
 
 const AppLayout = ({
   children,
   navbar,
-  title = "React Next.js Ecommerce Template"
+  title = "شرکت کشاورزی حاصل نوین"
 }) => {
   const [isFixed, setIsFixed] = useState(false);
   const toggleIsFixed = useCallback(fixed => {
@@ -25,7 +26,8 @@ const AppLayout = ({
       <Topbar />
 
       <Sticky fixedOn={0} onSticky={toggleIsFixed}>
-        <Header isFixed={isFixed} />
+        {/*<Header isFixed={isFixed} />*/}
+        <GroceryHeader isFixed={isFixed} />
       </Sticky>
 
       {navbar && <div className="section-after-sticky">{navbar}</div>}

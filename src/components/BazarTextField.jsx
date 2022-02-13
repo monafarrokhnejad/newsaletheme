@@ -16,7 +16,7 @@ const BazarTextField = ({
   }
 
   return <Box {...boxProps}>
-      {label && <Small display="block" mb={1} textAlign="left" fontWeight="600" color="grey.700">
+      {label && <Small display="block" mb={1} textAlign="right" fontWeight="600" color="grey.700">
           {label}
         </Small>}
       <TextField InputProps={{ ...InputProps,

@@ -139,7 +139,7 @@ const ProductCard1 = ({
           <Box flex="1 1 0" minWidth="0px" mr={1}>
             <Link href={`/product/${id}`}>
               <a>
-                <H3 className="title" fontSize="14px" textAlign="left" fontWeight="600" color="text.secondary" mb={1} title={title}>
+                <H3 className="title" fontSize="14px" textAlign="right" fontWeight="600" color="text.secondary" mb={1} title={title}>
                   {title}
                 </H3>
               </a>

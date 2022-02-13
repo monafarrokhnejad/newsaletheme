@@ -11,7 +11,7 @@ const CategorySectionHeader = ({
 }) => {
   return <FlexBox justifyContent="space-between" alignItems="center" mb={3}>
       <FlexBox alignItems="center">
-        {icon && <FlexBox mr={1} alignItems="center">
+        {icon && <FlexBox ml={1} alignItems="center">
             {icon}
           </FlexBox>}
         <H2 fontWeight="bold" lineHeight="1">

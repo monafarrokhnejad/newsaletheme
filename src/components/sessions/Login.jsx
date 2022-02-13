@@ -1,19 +1,26 @@
+import React, { useCallback, useState , useEffect  } from "react";
+
+import * as yup from "yup";
+import { useFormik } from "formik";
+
+import Link from "next/link";
+import { useRouter } from "next/router";
+
+import axios from "axios";
+import { SERVER_URL } from "constant";
+
 import BazarButton from "components/BazarButton";
 import Image from "components/BazarImage";
 import BazarTextField from "components/BazarTextField";
 import FlexBox from "components/FlexBox";
 import { H3, H6, Small } from "components/Typography";
+
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { Box, Card, Divider, IconButton } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { useFormik } from "formik";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import React, { useCallback, useState } from "react";
-import * as yup from "yup";
-import axios from "axios";
-import { SERVER_URL } from "constant";
+
+
 const fbStyle = {
   background: "#3B5998",
   color: "white"
@@ -22,11 +29,12 @@ const googleStyle = {
   background: "#4285F4",
   color: "white"
 };
+
 const StyledCard = styled(({
   children,
   passwordVisibility,
   ...rest
-}) => <Card {...rest}>{children}</Card>)(({
+}) => <div {...rest}>{children}</div>)(({
   theme,
   passwordVisibility
 }) => ({
@@ -59,20 +67,24 @@ const StyledCard = styled(({
   }
 }));
 
+
+
+
 const Login = () => {
   const [passwordVisibility, setPasswordVisibility] = useState(false);
   const router = useRouter();
+
   const togglePasswordVisibility = useCallback(() => {
     setPasswordVisibility(visible => !visible);
   }, []);
 
-  const handleFormSubmit = async values => {
-    try {
-      const {
-        data
-      } = await axios.post(`${SERVER_URL}/auth/login`, values); // router.push("/profile");
 
+  const handleFormSubmit = async values => {
+    console.log(values)
+    try {
+      const {data} = await axios.post(`${SERVER_URL}/paneladmin/login/`, values); // router.push("/profile");
       console.log(data);
+
     } catch (error) {
       console.log(error.response.data.message);
     }
@@ -86,33 +98,41 @@ const Login = () => {
     handleChange,
     handleSubmit
   } = useFormik({
-    onSubmit: handleFormSubmit,
-    initialValues,
-    validationSchema: formSchema
+    initialValues: {
+      username: '',
+      password: '',
+    },
+    validationSchema: formSchema,
+    onSubmit: handleFormSubmit
   });
   return <StyledCard elevation={3} passwordVisibility={passwordVisibility}>
       <form className="content" onSubmit={handleSubmit}>
-        <H3 textAlign="center" mb={1}>
-          Welcome To Ecommerce
-        </H3>
-        <Small fontWeight="600" fontSize="12px" color="grey.800" textAlign="center" mb={4.5} display="block">
-          Log in with email & password
-        </Small>
 
-        <BazarTextField mb={1.5} name="email" label="Email or Phone Number" placeholder="exmple@mail.com" variant="outlined" size="small" type="email" fullWidth onBlur={handleBlur} onChange={handleChange} value={values.email || ""} error={!!touched.email && !!errors.email} helperText={touched.email && errors.email} />
+        <H3 textAlign="center" mb={1}>به سامانه فروش حاصل نوین خوش آمدید</H3>
+        <Small fontWeight="600" fontSize="12px" color="grey.800" textAlign="center" mb={4.5} display="block">با ایمیل و رمز عبور خود وارد شوید</Small>
 
-        <BazarTextField mb={2} name="password" label="Password" placeholder="*********" autoComplete="on" type={passwordVisibility ? "text" : "password"} variant="outlined" size="small" fullWidth InputProps={{
-        endAdornment: <IconButton size="small" type="button" onClick={togglePasswordVisibility}>
+        <BazarTextField mb={1.5} name="username" label="نام کاربری خود را وارد کنید" placeholder="نام کاربری" variant="outlined"
+                        size="small" type="text" fullWidth onBlur={handleBlur} onChange={handleChange}
+                        value={values.username || ""} error={!!touched.username && !!errors.username} helperText={touched.username && errors.username} />
+
+        <BazarTextField mb={2} name="password" label="Password" placeholder="*********" autoComplete="on" type={passwordVisibility ? "text" : "password"}
+                        variant="outlined" size="small" fullWidth InputProps={{endAdornment: <IconButton size="small" type="button" onClick={togglePasswordVisibility}>
                 {passwordVisibility ? <Visibility className="passwordEye" fontSize="small" /> : <VisibilityOff className="passwordEye" fontSize="small" />}
               </IconButton>
       }} onBlur={handleBlur} onChange={handleChange} value={values.password || ""} error={!!touched.password && !!errors.password} helperText={touched.password && errors.password} />
 
-        <BazarButton variant="contained" color="primary" type="submit" fullWidth sx={{
-        mb: "1.65rem",
-        height: 44
-      }}>
-          Login
-        </BazarButton>
+
+        <BazarButton variant="contained" color="primary" type="submit" fullWidth sx={{mb: "1.65rem", height: 44}}>ورود</BazarButton>
+
+
+
+
+
+
+
+
+
+
 
         <Box mb={2}>
           <Box width="200px" mx="auto">
@@ -121,7 +141,7 @@ const Login = () => {
 
           <FlexBox justifyContent="center" mt={-1.625}>
             <Box color="grey.600" bgcolor="background.paper" px={2}>
-              on
+              or
             </Box>
           </FlexBox>
         </Box>
@@ -131,7 +151,7 @@ const Login = () => {
         height: 44
       }}>
           <Image src="/assets/images/icons/facebook-filled-white.svg" alt="facebook" />
-          <Box fontSize="12px" ml={1}>
+          <Box fontSize="12px" mr={1}>
             Continue with Facebook
           </Box>
         </BazarButton>
@@ -139,7 +159,7 @@ const Login = () => {
         height: 44
       }}>
           <Image src="/assets/images/icons/google-1.svg" alt="facebook" />
-          <Box fontSize="12px" ml={1}>
+          <Box fontSize="12px" mr={1}>
             Continue with Google
           </Box>
         </BazarButton>
@@ -170,11 +190,11 @@ const Login = () => {
 };
 
 const initialValues = {
-  email: "",
+  username: "",
   password: ""
 };
 const formSchema = yup.object().shape({
-  email: yup.string().email("invalid email").required("${path} is required"),
-  password: yup.string().required("${path} is required")
+  username: yup.string().required("${path} را وارد کنید"),
+  password: yup.string().required("${path} را وارد کنید")
 });
 export default Login;

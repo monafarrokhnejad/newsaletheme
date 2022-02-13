@@ -3,6 +3,9 @@ export const fontFamily = ["Open Sans", "Roboto", "-apple-system", "BlinkMacSyst
 export const components = {
   MuiCssBaseline: {
     styleOverrides: {
+      body:{
+        direction:"rtl",
+      },
       ul: {
         margin: 0,
         padding: 0,

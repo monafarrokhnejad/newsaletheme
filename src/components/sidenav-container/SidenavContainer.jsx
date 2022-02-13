@@ -28,10 +28,10 @@ const StyledContainer = styled(Container)(({
     position: "relative",
     left: "unset",
     width: `calc(100% - 2.5rem - ${layoutConstant.grocerySidenavWidth}px)`,
-    marginLeft: "1.75rem"
+    marginRight: "1.75rem"
   },
   ".pageContentShifted": {
-    left: layoutConstant.grocerySidenavWidth
+    right: layoutConstant.grocerySidenavWidth
   },
   ".section1": {
     marginBottom: "3rem",
@@ -55,7 +55,7 @@ const StyledContainer = styled(Container)(({
       width: "100% !important",
       marginLeft: "auto !important",
       marginRight: "auto !important",
-      left: "0px !important"
+      right: "0px !important"
     }
   }
 }));
