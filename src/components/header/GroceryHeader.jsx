@@ -1,40 +1,22 @@
+import React from 'react';
+import Link from 'next/link';
 import BazarButton from 'components/BazarButton';
 import CategoryMenu from 'components/categories/CategoryMenu';
 import FlexBox from 'components/FlexBox';
 import Category from 'components/icons/Category';
-import ShoppingBagOutlined from 'components/icons/ShoppingBagOutlined';
-import MiniCart from 'components/mini-cart/MiniCart';
 import GrocerySearchBox from 'components/search-box/GrocerySearchBox';
-import Login from 'components/sessions/Login';
-import {useAppContext} from 'contexts/app/AppContext';
 import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
-import PersonOutline from '@mui/icons-material/PersonOutline';
-import {Badge, Box, Container, Dialog, Drawer, IconButton, useMediaQuery, useTheme} from '@mui/material';
-import Link from 'next/link';
-import React, {useState} from 'react';
-import {HeaderWrapper} from './Header'; // component props interface
+import {Box, Container, useMediaQuery, useTheme} from '@mui/material';
+import {HeaderWrapper} from './Header';
+import {useRouter} from "next/router";
 
+import Account from "../account/account";
 const GroceryHeader = ({isFixed}) => {
-    const [sidenavOpen, setSidenavOpen] = useState(false);
-    const [dialogOpen, setDialogOpen] = useState(false);
+    const router = useRouter();
     const theme = useTheme();
+
     const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
 
-    const toggleSidenav = () => setSidenavOpen(!sidenavOpen);
-
-    const toggleDialog = () => setDialogOpen(!dialogOpen);
-
-    const {
-        state
-    } = useAppContext();
-    const {
-        cartList
-    } = state.cart;
-    const cartHandle = <Badge badgeContent={cartList.length} color="primary">
-        <Box component={IconButton} ml={2} bgcolor="grey.200" p={1.25} onClick={toggleSidenav}>
-            <ShoppingBagOutlined/>
-        </Box>
-    </Badge>;
     return <HeaderWrapper>
         <Container sx={{
             display: 'flex',
@@ -81,27 +63,14 @@ const GroceryHeader = ({isFixed}) => {
                     xs: 'none',
                     md: 'flex'
                 }
-            }}> <Link href={'/login'}>
-                <a>
-                    <Box component={IconButton} mr={2} ml={2} p={1.25} bgcolor="grey.200" onClick={toggleDialog}>
-                        <PersonOutline/>
-                    </Box>
-                </a>
-            </Link>
-                {cartHandle}
+            }}>
+                <Account/>
+
             </FlexBox>
 
-            {/*<Dialog open={dialogOpen} fullWidth={isMobile} scroll="body" onClose={toggleDialog}>*/}
-            {/*  <Login />*/}
-            {/*</Dialog>*/}
 
-            <Drawer open={sidenavOpen} anchor="right" onClose={toggleSidenav} SlideProps={{
-                style: {
-                    overflow: 'hidden'
-                }
-            }}>
-                <MiniCart toggleSidenav={toggleSidenav}/>
-            </Drawer>
+
+
         </Container>
     </HeaderWrapper>;
 };

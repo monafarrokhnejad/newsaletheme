@@ -57,9 +57,9 @@ const Home2 = props => {
                 <GrocerySection1 />
             </Box>
 
-            <Box mb={6} overflow="hidden">
-                <GrocerySection2 services={section2Services} />
-            </Box>
+            {/*<Box mb={6} overflow="hidden">*/}
+            {/*    <GrocerySection2 services={section2Services} />*/}
+            {/*</Box>*/}
 
             <Box mb={6}>
                 <GrocerySection3 categories={section3Category} />
@@ -69,21 +69,21 @@ const Home2 = props => {
                 <GrocerySection4 products={section4Products} />
             </Box>
 
-            <Box mb={6}>
-                <GrocerySection5 products={section5Products} />
-            </Box>
+            {/*<Box mb={6}>*/}
+            {/*    <GrocerySection5 products={section5Products} />*/}
+            {/*</Box>*/}
 
             <Box mb={6}>
                 <GrocerySection6 cardList={section6CardList} />
             </Box>
 
-            <Box mb={6}>
-                <GrocerySection7 products={section7Products} />
-            </Box>
+            {/*<Box mb={6}>*/}
+            {/*    <GrocerySection7 products={section7Products} />*/}
+            {/*</Box>*/}
 
-            <Box mb={6}>
-                <GrocerySection8 products={section8Products} />
-            </Box>
+            {/*<Box mb={6}>*/}
+            {/*    <GrocerySection8 products={section8Products} />*/}
+            {/*</Box>*/}
 
             <Box mb={6}>
                 <GrocerySection9 testimonials={section9Testimonials} />

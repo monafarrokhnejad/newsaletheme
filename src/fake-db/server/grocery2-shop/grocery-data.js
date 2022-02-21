@@ -43,7 +43,7 @@ export const shopByCategory = [{
   url: "/"
 }];
 export const carouselCardList = [{
-  title: "ّلورم ایپسوم برای تست تم وبسایت",
+  title: "لورم ایپسوم برای تست تم جدید وبسایت",
   subtitle: "تا 10 ستامبر 2021",
   imgUrl: "/assets/images/products/kisspng-organic-food-leaf-vegetable-fruit-rich-vegetables-5aa9f4d026ae09 1.png",
   shopUrl: "/",
@@ -75,39 +75,39 @@ export const testimonialList = [{
   photoUrl: "/assets/images/faces/7.png"
 }];
 export const grocery2Navigations = [{
-  icon: "Carrot",
-  title: "سبزیجات",
-  href: "/product/search/vegetables"
+  icon: "Home",
+  title: "خانه",
+  href: "/"
 }, {
-  icon: "Apple",
-  title: "میوه و سبزیجات",
-  href: "/product/search/Fruits & Vegetables",
-  child: [{
-    title: "میوه های تازه",
-    href: "/product/search/Fresh Frutes",
-    child: [{
-      title: "سیب و هلو و پرتقال",
-      href: "/product/search/Pears, apples, quinces"
-    }, {
-      title: "هندوانه و طالبی و خربزه",
-      href: "/product/search/Peaches, plums, apricots"
-    }]
-  }, {
-    title: "سبزیجات تازه",
-    href: "/product/search/Fresh Vegetables",
-    child: [{
-      title: "پیاز",
-      href: "/product/search/Onion"
-    }, {
-      title: "گوجه",
-      href: "/product/search/Potato"
-    }, {
-      title: "پک بسته بندی",
-      href: "/product/search/Vegetable Pack"
-    }]
-  }]
+  icon: "OrderRecord",
+  title: "ثبت سفارش",
+  href: "/order"
 }, {
-  icon: "Milk",
-  title: "لبنیات و تخم مرغ",
+  icon: "Bills",
+  title: "فاکتور و صورتحساب ها",
   href: "/product/search/Dariry & Eggs"
+}, {
+  icon: "Price",
+  title: "قیمت میوه و تره بار",
+  href: "/product/search/Dariry & Eggs"
+}, {
+  icon: "ContactUs",
+  title: "ارتباط با ما",
+  href: "/product/search/Dariry & Eggs"
+}, {
+  icon: "Mail",
+  title: "صندوق پیام ها",
+  href: "/product/search/Dariry & Eggs"
+}, {
+  icon: "YourGift",
+  title: "هدایای شما",
+  href: "/product/search/Dariry & Eggs"
+}, {
+  icon: "Survey",
+  title: "نظرسنجی",
+  href: "/product/search/Dariry & Eggs"
+}, {
+  icon: "Setting",
+  title: "تنظیمات",
+  href: "/settings"
 }];
