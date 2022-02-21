@@ -3,7 +3,8 @@ import LazyImage from "components/LazyImage";
 import { H3, H5 } from "components/Typography";
 import { Box, Button, Grid, styled } from "@mui/material";
 import Link from "next/link";
-import React from "react"; // styled component
+import React from "react";
+import {primary} from "../../theme/themeColors"; // styled component
 
 const StyledGrid = styled(Grid)(({
   theme
@@ -25,8 +26,9 @@ const GrocerySection6 = ({
   cardList
 }) => {
   return <Box>
-      <Box m={-0.5}>
-        <Carousel totalSlides={3} visibleSlides={1} showDots={true} autoPlay={true} spacing="0px" arrowButtonColor="inherit" showArrowOnHover={true}>
+      <Box m={-0.5} className={"section6"}>
+        <Carousel totalSlides={3} visibleSlides={1} showDots={true} autoPlay={false} spacing="0px" showArrowOnHover={true}
+                  dotColor={"#f68e1f"}>
           {cardList && cardList.map((item, ind) => <StyledGrid key={ind} container sx={{
           bgcolor: item.bgColor
         }}>
@@ -40,8 +42,8 @@ const GrocerySection6 = ({
 
                   <Link href={item.shopUrl}>
                     <a>
-                      <Button variant="contained" color="primary">
-                        Shop Now
+                      <Button variant="contained" color="primary" sx={{color:"white"}}>
+                        همین حالا خرید کنید
                       </Button>
                     </a>
                   </Link>

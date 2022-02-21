@@ -12,6 +12,7 @@ import { Container, MenuItem } from '@mui/material';
 // import TouchRipple from '@mui/material/ButtonBase';
 import { layoutConstant } from 'utils/constants';
 import { styled } from '@mui/material/styles';
+import {Box} from "@mui/system";
 
 
 const TopbarWrapper = styled('div')(({
@@ -91,22 +92,19 @@ const Topbar = () => {
           </div>
 
           <FlexBox alignItems="center" style={{marginLeft:"8px"}}>
-            <CallOutlined fontSize="small" />
+            <CallOutlined />
             <Span className="title">66564578</Span>
           </FlexBox>
           <FlexBox alignItems="center" ml={2.5}>
-            <MailOutline fontSize="small" />
+            <MailOutline />
             <Span className="title">haselnovin@gmail.com</Span>
           </FlexBox>
         </FlexBox>
 
         <FlexBox className="topbarRight" alignItems="center">
-          <NavLink className="link" href="/faq">
-            سوالات شما؟
-          </NavLink>
-          <NavLink className="link" href="/help">
-            نیاز به کمک دارید؟
-          </NavLink>
+          <h3>
+            <span>کارشناس شما : </span><span style={{color:"#592e00"}}>مونا فرخ نژاد</span>
+          </h3>
         </FlexBox>
       </Container>
     </TopbarWrapper>;

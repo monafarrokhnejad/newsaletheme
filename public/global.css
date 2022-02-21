@@ -108,6 +108,10 @@
 p{
     text-align: right !important;
 }
-.css-ptiqhd-MuiSvgIcon-root{
+.child-nav-item .css-ptiqhd-MuiSvgIcon-root{
     transform: rotate(180deg);
+}
+.cart-counter span , .section6 button svg , .section9 button svg{
+    color: white !important;
+    fill: white !important;
 }

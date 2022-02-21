@@ -19,6 +19,7 @@ import Payment from "components/icons/Payment";
 import PickUpBox from "components/icons/PickUpBox";
 import OnlineService from "components/icons/OnlineService"; // furniture shop page icons
 
+
 import Home from "./Home";
 import Popular from "./furniture-shop/Popular";
 import Trending from "./furniture-shop/Trending";
@@ -58,7 +59,28 @@ import Thermometer from "./health-and-beauty/Thermometer";
 import OxygenPump from "./health-and-beauty/OxygenPump";
 import LenseCase from "./health-and-beauty/LenseCase";
 import AutoMotive from "./health-and-beauty/Automotive";
+import GiftBox from "./GiftBox";
+import Setting from "./Setting";
+import Mail from "./Mail";
+import ContactUs from "./ContactUs";
+import Survey from "./Survey";
+import Cart from "./Cart";
+import Bills from "./Bills";
+import OrderRecord from "./OrderRecord";
+import Price from "./Price";
+import YourGift from "./YourGift";
+
 const appIcons = {
+  Setting,
+  YourGift,
+  Bills,
+  Price,
+  OrderRecord,
+  Cart,
+  ContactUs,
+  Survey,
+  Mail,
+  GiftBox,
   Beer,
   Milk,
   Snack,
