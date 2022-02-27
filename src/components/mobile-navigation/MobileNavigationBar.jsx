@@ -52,7 +52,7 @@ const MobileNavigationBar = () => {
   };
   return width <= 900 ? <Wrapper>
       {list.map(item => <StyledNavLink href={item.href} key={item.title}>
-          {item.title === 'Cart' ? <Badge badgeContent={cartList.length} color="primary">
+          {item.title === 'خرید' ? <Badge badgeContent={cartList.length} color="primary" className={"cart-counter"}>
               <item.icon fontSize="small" sx={iconStyle} />
             </Badge> : <item.icon sx={iconStyle} fontSize="small" />}
 
@@ -62,19 +62,19 @@ const MobileNavigationBar = () => {
 };
 
 const list = [{
-  title: 'Home',
+  title: 'خانه',
   icon: Home,
   href: '/'
 }, {
-  title: 'Category',
+  title: 'محصولات',
   icon: CategoryOutlined,
   href: '/mobile-category-nav'
 }, {
-  title: 'Cart',
+  title: 'خرید',
   icon: ShoppingBagOutlined,
   href: '/cart'
 }, {
-  title: 'Account',
+  title: 'شخصی',
   icon: User2,
   href: '/profile'
 }];

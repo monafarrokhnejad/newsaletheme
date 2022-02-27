@@ -12,6 +12,7 @@ import {AppProvider} from "contexts/app/AppContext";
 import createEmotionCache from "../src/createEmotionCache";
 import {CacheProvider} from "@emotion/react";
 import "../public/global.css";
+import "/node_modules/video-react/dist/video-react.css"; // import css
 
 const clientSideEmotionCache = createEmotionCache();
 // export const cache = createCache({ key: 'css', prepend: true })

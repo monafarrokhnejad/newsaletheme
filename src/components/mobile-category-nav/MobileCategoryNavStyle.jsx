@@ -12,8 +12,8 @@ const MobileCategoryNavStyle = styled('div')(({
   },
   '& .main-category-holder': {
     position: 'fixed',
-    left: 0,
-    top: layoutConstant.mobileHeaderHeight,
+    right: 0,
+    top: '100px',
     bottom: layoutConstant.mobileNavHeight,
     background: theme.palette.grey[300],
     overflowY: 'auto',
@@ -33,12 +33,12 @@ const MobileCategoryNavStyle = styled('div')(({
   },
   '& .container': {
     position: 'fixed',
-    top: layoutConstant.mobileHeaderHeight,
+    top: "110px",
     bottom: layoutConstant.mobileNavHeight,
-    left: '90px',
+    right: '90px',
     padding: '0.5rem 1rem',
     flex: '1 1 0',
-    overflowY: 'auto'
+    overflowY: 'auto',
   },
   '& .ellipsis': {
     display: '-webkit-box',

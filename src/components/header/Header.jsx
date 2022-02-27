@@ -29,7 +29,7 @@ export const HeaderWrapper = styled(Box)(({
     height: layoutConstant.headerHeight,
     background: theme.palette.background.paper,
     transition: 'height 250ms ease-in-out',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
         height: layoutConstant.mobileHeaderHeight
     }
 }));

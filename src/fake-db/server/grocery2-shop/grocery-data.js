@@ -13,33 +13,33 @@ export const serviceList = [{
 }];
 export const shopByCategory = [{
   imgUrl: "/assets/images/icons/healthy-food.svg",
-  title: "میوه و سبزیجات",
+  title: "کودهای اصلاح کننده",
   subtitle: "60% تخفیف",
   url: "/"
 }, {
   imgUrl: "/assets/images/icons/fish.svg",
-  title: "Fish & meat",
-  subtitle: "Upto 30% off",
+  title: "کودهای دومنظوره",
+  subtitle: "60% تخفیف",
   url: "/"
 }, {
   imgUrl: "/assets/images/icons/wheat-flour.svg",
-  title: "Rice & Flour",
-  subtitle: "Upto 40% off",
+  title: "کودهای تغذیه ای",
+  subtitle: "60% تخفیف",
   url: "/"
 }, {
   imgUrl: "/assets/images/products/Orange 1kg 2.png",
-  title: "Fruits & Vegatables",
-  subtitle: "Upto 40% off",
+  title: "کودهای محرک رشد",
+  subtitle: "60% تخفیف",
   url: "/"
 }, {
   imgUrl: "/assets/images/icons/feeding-bottle.svg",
-  title: "Baby Food",
-  subtitle: "Upto 30% off",
+  title: "بذر گلخانه ای",
+  subtitle: "60% تخفیف",
   url: "/"
 }, {
   imgUrl: "/assets/images/icons/skincare.svg",
-  title: "Personal Care",
-  subtitle: "Upto 60% off",
+  title: "بذر فضای باز",
+  subtitle: "60% تخفیف",
   url: "/"
 }];
 export const carouselCardList = [{

@@ -1,13 +1,16 @@
-import Accordion from 'components/accordion/Accordion';
-import AccordionHeader from 'components/accordion/AccordionHeader';
-import Header from 'components/header/Header';
-import MobileCategoryImageBox from 'components/mobile-category-nav/MobileCategoryImageBox';
-import MobileCategoryNavStyle from 'components/mobile-category-nav/MobileCategoryNavStyle';
-import MobileNavigationBar from 'components/mobile-navigation/MobileNavigationBar';
-import navigations from 'data/navigations';
+import Accordion from '/src/components/accordion/Accordion';
+import AccordionHeader from '/src/components/accordion/AccordionHeader';
+import Header from '/src/components/header/Header';
+import MobileCategoryImageBox from '/src/components/mobile-category-nav/MobileCategoryImageBox';
+import MobileCategoryNavStyle from '/src/components/mobile-category-nav/MobileCategoryNavStyle';
+import MobileNavigationBar from '/src/components/mobile-navigation/MobileNavigationBar';
+import navigations from '/src/data/navigations';
 import { Box, Divider, Grid, Typography } from '@mui/material';
 import Link from 'next/link';
 import React, { Fragment, useEffect, useState } from 'react';
+import MobileNavigationBar2 from "../src/components/mobile-navigation/MobileNavigationBar2";
+import GroceryHeader from "../src/components/header/GroceryHeader";
+import Topbar from "../src/components/topbar/Topbar";
 
 const MobileCategoryNav = () => {
   const [category, setCategory] = useState(null);
@@ -27,8 +30,10 @@ const MobileCategoryNav = () => {
   useEffect(() => {
     setSuggestedList(suggestion);
   }, []);
+
   return <MobileCategoryNavStyle>
-      <Header className="header" />
+    <Topbar/>
+      <GroceryHeader className="header" />
       <div className="main-category-holder">
         {navigations.map(item => <Box className="main-category-box" borderLeft={`${category?.href === item.href ? '3' : '0'}px solid`} onClick={handleCategoryClick(item)} key={item.title}>
             <item.icon sx={{
@@ -40,11 +45,11 @@ const MobileCategoryNav = () => {
             </Typography>
           </Box>)}
       </div>
-      <Box className="container">
+      <Box className="container" width={'100%'}>
         <Typography fontWeight="600" fontSize="15px" mb={2}>
-          Recommended Categories
+          محصولات شما
         </Typography>
-        <Box mb={4}>
+        <Box mb={4} display={"none"}>
           <Grid container spacing={3}>
             {suggestedList.map((item, ind) => <Grid item lg={1} md={2} sm={3} xs={4} key={ind}>
                 <Link href="/product/search/423423">

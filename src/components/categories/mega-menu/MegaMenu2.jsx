@@ -9,7 +9,7 @@ const MegaMenu2 = ({
 }) => {
   return <StyledMegaMenu>
       <BazarCard elevation={2} sx={{
-      ml: '1rem',
+      // ml: '1rem',
       py: '0.5rem'
     }}>
         {data?.map(item => <CategoryMenuItem title={item.title} href={item.href} icon={item.icon} caret={!!item.menuData} key={item.title}>

@@ -1612,7 +1612,7 @@ export default [{
   imgGroup: ["/assets/images/products/Groceries/1.SaktiSambarPowder.png", "/assets/images/products/Groceries/1.SaktiSambarPowder.png", "/assets/images/products/Groceries/1.SaktiSambarPowder.png"]
 }, {
   price: 188,
-  title: "Premium Grocery Collection",
+  title: "کود محافظت کننده دوم",
   imgUrl: "/assets/images/products/Groceries/2.PremiumGroceryCollection.png",
   category: "groceries",
   discount: 6,
@@ -1621,7 +1621,7 @@ export default [{
   imgGroup: ["/assets/images/products/Groceries/2.PremiumGroceryCollection.png", "/assets/images/products/Groceries/2.PremiumGroceryCollection.png", "/assets/images/products/Groceries/2.PremiumGroceryCollection.png"]
 }, {
   price: 253,
-  title: "Premium Grocery Pack",
+  title: "کود محافظت کننده ",
   imgUrl: "/assets/images/products/Groceries/3.PremiumGroceryPack.png",
   category: "groceries",
   discount: 6,
@@ -1630,7 +1630,7 @@ export default [{
   imgGroup: ["/assets/images/products/Groceries/3.PremiumGroceryPack.png", "/assets/images/products/Groceries/3.PremiumGroceryPack.png", "/assets/images/products/Groceries/3.PremiumGroceryPack.png"]
 }, {
   price: 145,
-  title: "تازه و فرش ماسالای",
+  title: "کود اصلاح کننده هیبرید",
   imgUrl: "/assets/images/products/Groceries/4.FreashRealCholeMasala.png",
   category: "groceries",
   discount: 8,
