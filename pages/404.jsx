@@ -27,7 +27,8 @@ const Error404 = () => {
         </Button>
         <Link href="/">
           <Button variant="contained" color="primary" sx={{
-          m: '0.5rem'
+          m: '0.5rem',
+              color:"white"
         }}>
             Go to Home
           </Button>

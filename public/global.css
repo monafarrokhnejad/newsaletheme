@@ -28,7 +28,9 @@
     font-weight: 700;
     font-style: normal;
 }
-
+body{
+    overflow-x: hidden;
+}
 @media (max-width: 1300px) {
     .login-box {
         background-color: #f68e1f;
@@ -114,4 +116,22 @@ p{
 .cart-counter span , .section6 button svg , .section9 button svg{
     color: white !important;
     fill: white !important;
+}
+.mob-search{
+    position: absolute;
+    top: 0;
+    background: white;
+    height: 100px;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px #9b9b9b;
+    justify-content: space-between;
+    width: 100%;
+}
+.type-of-user{
+    background-color: #f68e1f;
+    padding:  2px 10px;
+    border-radius: 4px;
+    margin-right: 8px;
 }

@@ -28,7 +28,7 @@ const StyledContainer = styled(Container)(({
     position: "relative",
     left: "unset",
     width: `calc(100% - 2.5rem - ${layoutConstant.grocerySidenavWidth}px)`,
-    marginRight: "1.75rem"
+    marginRight: "2.5rem"
   },
   ".pageContentShifted": {
     right: layoutConstant.grocerySidenavWidth

@@ -13,6 +13,7 @@ import { Container, MenuItem } from '@mui/material';
 import { layoutConstant } from 'utils/constants';
 import { styled } from '@mui/material/styles';
 import {Box} from "@mui/system";
+import Account from "../account/account";
 
 
 const TopbarWrapper = styled('div')(({
@@ -23,8 +24,7 @@ const TopbarWrapper = styled('div')(({
   color: "white",
   height: layoutConstant.topbarHeight,
   fontSize: 12,
-  '@media only screen and (min-width: 900px)': {
-    direction:"ltr",
+  '@media only screen and (min-width: 959px)': {
   },
   '& .topbarLeft': {
     '& .logo': {
@@ -33,9 +33,10 @@ const TopbarWrapper = styled('div')(({
     '& .title': {
       marginLeft: '5px',
     },
-    '@media only screen and (max-width: 900px)': {
+    '@media only screen and (max-width: 959px)': {
       '& .logo': {
-        display: 'block'
+        display: 'block',
+        cursor:"pointer"
       },
       '& > *:not(.logo)': {
         display: 'none'
@@ -49,7 +50,7 @@ const TopbarWrapper = styled('div')(({
       color: "white",
       fontWeight: "bold"
     },
-    '@media only screen and (max-width: 900px)': {
+    '@media only screen and (max-width: 959px)': {
       '& .link': {
         display: 'none'
       }
@@ -87,17 +88,12 @@ const Topbar = () => {
         <FlexBox className="topbarLeft" alignItems="center">
           <div className="logo">
             <Link href="/">
-              <Image display="block" height="28px" src="/assets/images/logo.png" alt="logo" />
+              <Image display="block" height="40px" src="/assets/images/logo-white.png" alt="logo" />
             </Link>
           </div>
 
           <FlexBox alignItems="center" style={{marginLeft:"8px"}}>
-            <CallOutlined />
-            <Span className="title">66564578</Span>
-          </FlexBox>
-          <FlexBox alignItems="center" ml={2.5}>
-            <MailOutline />
-            <Span className="title">haselnovin@gmail.com</Span>
+            <Account/>
           </FlexBox>
         </FlexBox>
 

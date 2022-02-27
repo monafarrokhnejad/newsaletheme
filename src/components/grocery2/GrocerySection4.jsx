@@ -31,7 +31,7 @@ const GrocerySection4 = ({products}) => {
 
     return <Box>
         <H3 fontSize="25px" mb={2}>
-            Trending Products
+            محصولات پیشنهادی مابرای شما
         </H3>
         <SubTitle>بهترین کلکسیون در 2021 برای شما!</SubTitle>
         <Box my={-0.5}>

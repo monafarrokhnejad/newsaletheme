@@ -106,7 +106,7 @@ const StyledChip = styled(Chip)(() => ({
   paddingLeft: 3,
   paddingRight: 3,
   top: "10px",
-  left: "10px",
+  right: "10px",
   zIndex: 11,
   color:"white"
 }));
@@ -175,8 +175,8 @@ const ProductCard13 = props => {
     });
   }, []);
   return <StyledBazarCard hoverEffect={hoverEffect}>
-      <ImageWrapper>
-        {off !== 0 && <StyledChip color="primary" size="small" label={`${off}% off`} />}
+      <ImageWrapper >
+        {off !== 0 && <StyledChip color="primary" size="small" label={`${off}% تخفیف`} />}
 
         <HoverIconWrapper>
           <IconButton sx={{
@@ -198,76 +198,78 @@ const ProductCard13 = props => {
             </a>
           </Link>
 
-          <ItemController className="controlBox">
-            <Box className="controller">
-              <Link href={`/product/${id}`}>
-                <a>
-                  <Span>
-                    <PreviewIcon />
-                  </Span>
-                </a>
-              </Link>
+          {/*<ItemController className="controlBox">*/}
+          {/*  <Box className="controller">*/}
+          {/*    <Link href={`/product/${id}`}>*/}
+          {/*      <a>*/}
+          {/*        <Span>*/}
+          {/*          <PreviewIcon />*/}
+          {/*        </Span>*/}
+          {/*      </a>*/}
+          {/*    </Link>*/}
 
-              <Span sx={{
-              borderLeft: `1px solid ${palette.grey[300]}`,
-              borderRight: `1px solid ${palette.grey[300]}`
-            }}>
-                <FavoriteIcon />
-              </Span>
-              <Span onClick={handleCartAmountChange((cartItem?.qty || 0) + 1)}>
-                <ShoppingCartIcon />
-              </Span>
-            </Box>
-          </ItemController>
+          {/*    <Span sx={{*/}
+          {/*    borderLeft: `1px solid ${palette.grey[300]}`,*/}
+          {/*    borderRight: `1px solid ${palette.grey[300]}`*/}
+          {/*  }}>*/}
+          {/*      <FavoriteIcon />*/}
+          {/*    </Span>*/}
+          {/*    <Span onClick={handleCartAmountChange((cartItem?.qty || 0) + 1)}>*/}
+          {/*      <ShoppingCartIcon />*/}
+          {/*    </Span>*/}
+          {/*  </Box>*/}
+          {/*</ItemController>*/}
         </ImageBox>
       </ImageWrapper>
 
       <ContentWrapper>
         <FlexBox>
-          <Box flex="1 1 0" minWidth="0px" mr={1}>
+          <FlexBox className="add-cart" flexDirection="column-reverse" alignItems="center" justifyContent={!!cartItem?.qty ? "space-between" : "flex-start"} width="30px">
+            <Button variant="outlined" color="primary" sx={{
+              padding: "3px"
+            }} onClick={handleCartAmountChange((cartItem?.qty || 0) + 1)}>
+              <Add fontSize="small" />
+            </Button>
+
+            {!!cartItem?.qty && <Fragment>
+              <Box color="text.primary" fontWeight="600">
+                {cartItem?.qty}
+              </Box>
+              <Button variant="outlined" color="primary" sx={{
+                padding: "3px"
+              }} onClick={handleCartAmountChange(cartItem?.qty - 1)}>
+                <Remove fontSize="small" />
+              </Button>
+            </Fragment>}
+          </FlexBox>
+
+          <Box flex="1 1 0" minWidth="0px" ml={1}>
             <Link href={`/product/${id}`}>
               <a>
-                <H3 className="title" fontSize="14px" textAlign="left" fontWeight="600" color="text.secondary" mb={1} title={title}>
+                <H3 className="title" fontSize="14px" textAlign="right" fontWeight="600" color="text.secondary" mb={1} title={title}>
                   {title}
                 </H3>
               </a>
             </Link>
 
-            {!hideRating && <Box display="flex" alignItems="center" style={{margin: '8px 0 '}}>
-                <BazarRating value={rating || 0} color="warn" readOnly />{" "}
-                <Span sx={{
-              color: palette.grey[600]
-            }}>{`(${rating}.0)`}</Span>
-              </Box>}
+            <Box display="flex" justifyContent={"end"} alignItems="center" style={{margin: '8px 0 '}}>
+                {/*<BazarRating value={rating || 0} color="warn" readOnly />{" "}*/}
+              <Span sx={{
+                color: palette.grey[600]
+              }}>{`(${rating}.0)`}</Span>
+              </Box>
 
-            <FlexBox alignItems="center" mt={0.5}>
-              <Box pr={1} fontWeight="600" color="primary.main">
+            <FlexBox justifyContent={"end"} display={"flex"} alignItems="center" mt={0.5}>
+              <Box  pr={1} fontWeight="600" color="primary.main">
                 ${(price - price * off / 100).toFixed(2)}
               </Box>
-              {off !== 0 && <Box color="grey.600" fontWeight="600">
+              {
+                off !== 0 && <Box color="grey.600" fontWeight="600">
                   <del>{price?.toFixed(2)}</del>
-                </Box>}
+                </Box>
+              }
             </FlexBox>
           </Box>
-
-          <FlexBox className="add-cart" flexDirection="column-reverse" alignItems="center" justifyContent={!!cartItem?.qty ? "space-between" : "flex-start"} width="30px">
-            <Button variant="outlined" color="primary" sx={{
-            padding: "3px"
-          }} onClick={handleCartAmountChange((cartItem?.qty || 0) + 1)}>
-              <Add fontSize="small" />
-            </Button>
-
-            {!!cartItem?.qty && <Fragment>
-                <Box color="text.primary" fontWeight="600">
-                  {cartItem?.qty}
-                </Box>
-                <Button variant="outlined" color="primary" sx={{
-              padding: "3px"
-            }} onClick={handleCartAmountChange(cartItem?.qty - 1)}>
-                  <Remove fontSize="small" />
-                </Button>
-              </Fragment>}
-          </FlexBox>
         </FlexBox>
       </ContentWrapper>
 

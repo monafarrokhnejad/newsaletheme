@@ -11,14 +11,12 @@ import Accordion from "components/accordion/Accordion";
 import AccordionHeader from "components/accordion/AccordionHeader"; // component props interface
 
 const Grocery2SideNav = props => {
-  const {
-    isFixed,
-    groceryNavigation
-  } = props;
-  const {
-    shadows
-  } = useTheme();
+
+  const {isFixed, groceryNavigation} = props;
+  const {shadows} = useTheme();
+
   const [scrolled, setScrolled] = useState(false);
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 180) {

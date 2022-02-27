@@ -27,7 +27,7 @@ const GrocerySection3 = ({
 }) => {
   return <Box>
       <H3 fontSize="25px" mb={4}>
-        Shop By Category
+       دسته بندی محصولات
       </H3>
 
       <Grid container spacing={3}>

@@ -82,7 +82,7 @@ const Navbar = ({navListOpen, hideCategories}) => {
 
     const renderNestedNav = () => {
         return<Box sx={{marginLeft:'1.5rem'}}>
-            <Items/>
+            {/*<Items/>*/}
         </Box>
     }
 

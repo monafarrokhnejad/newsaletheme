@@ -5,7 +5,7 @@ import MenuItem from "@mui/material/MenuItem";
 import {useRouter} from "next/router";
 
 const Account = () => {
-    const router =useRouter();
+    const router = useRouter();
     const [nameX, setNameX] = useState("");
     useEffect(() => {
         setNameX(window.localStorage.getItem("name"))
@@ -32,12 +32,18 @@ const Account = () => {
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
-                sx={{display:"flex", alignItems:"center", marginLeft:"1.5rem"}}
-                >
-                <img width={50} src="/assets/images/faces/7.png"/>
-                <div style={{marginRight: "10px", fontSize: "14px", width:"98px"}}>
-                        Mohamad {nameX}
+                sx={{
+                    display: "flex", alignItems: "center",
+                    '@media only screen and (max-width: 960px)': {
+                        marginLeft: "auto"
+                    }
+                }}
+            >
+                <img width={33} src="/assets/images/faces/7.png"/>
+                <div style={{marginRight: "10px", fontSize: "14px", width: "max-content"}}>
+                    Mohamad {nameX}
                 </div>
+                <span className={"type-of-user"}>الماس</span>
             </Box>
             <Menu
                 id="basic-menu"
@@ -47,6 +53,7 @@ const Account = () => {
                 MenuListProps={{
                     'aria-labelledby': 'basic-button',
                 }}
+                sx={{zIndex:"9999"}}
             >
                 <MenuItem onClick={handleClose}>Profile</MenuItem>
                 <MenuItem onClick={handleClose}>My account</MenuItem>
