@@ -19,9 +19,10 @@ const BazarTextField = ({
       {label && <Small display="block" mb={1} textAlign="right" fontWeight="600" color="grey.700">
           {label}
         </Small>}
-      <TextField InputProps={{ ...InputProps,
+      <TextField fullWidth InputProps={{ ...InputProps,
       style: { ...InputProps?.style,
-        height: 44
+        height: 44,
+        width:"100%"
       }
     }} {...textFieldProps} />
     </Box>;

@@ -33,11 +33,20 @@ const Items = ({searchInput}) => {
                     marginLeft: "1.3rem",
                     '@media only screen and (max-width: 800px)': {
                         marginLeft: "0.8rem",
+                    },
+                    display: {
+                        md: "none",
+                        xs: "flex"
                     }
                 }} component={IconButton} p={mobileSize ? 0.6 : 0.9} bgcolor="grey.200" onClick={searchInput}>
                     <SearchIcon/>
                 </Box>
-                <Badge className={"cart-counter"} badgeContent={cartList.length} color="primary">
+                <Badge className={"cart-counter"} badgeContent={cartList.length} color="primary" sx={{
+                    display: {
+                        xs: 'none',
+                        md: 'flex'
+                    }
+                }}>
                     <Box component={IconButton} p={mobileSize ? 0.6 : 0.9} bgcolor="grey.200">
                         <FavoriteBorderIcon/>
                     </Box>
@@ -46,6 +55,10 @@ const Items = ({searchInput}) => {
                        sx={{
                            margin: "1.3rem", '@media only screen and (max-width: 800px)': {
                                margin: "0.8rem",
+                           },
+                           display: {
+                               xs: 'none',
+                               md: 'flex'
                            }
                        }}>
                     <Box component={IconButton} p={mobileSize ? 0.6 : 0.9} bgcolor="grey.200">

@@ -40,7 +40,7 @@ const MiniCart = ({
     return cartList.reduce((accumulator, item) => accumulator + item.price * item.qty, 0) || 0;
   };
 
-  return <Box width="380px">
+  return <Box zIndex={"99999"} width="380px">
       <Box overflow="auto" height={`calc(100vh - ${!!cartList.length ? "80px - 3.25rem" : "0px"})`}>
         <FlexBox alignItems="center" m="0px 20px" height="74px" color="secondary.main">
           <ShoppingBagOutlined color="inherit" />

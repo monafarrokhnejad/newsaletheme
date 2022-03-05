@@ -84,12 +84,8 @@ const themesOptions = {
   }
 };
 export const bazarTheme = () => {
-  const {
-    pathname
-  } = useRouter();
-  const {
-    publicRuntimeConfig
-  } = getConfig();
+  const {pathname} = useRouter();
+  const {publicRuntimeConfig} = getConfig();
   /*============ Remove following code ==============*/
 
   const updateTheme = themeName => {

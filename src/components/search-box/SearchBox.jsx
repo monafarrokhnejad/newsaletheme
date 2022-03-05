@@ -99,6 +99,6 @@ const SearchBox = () => {
     </Box>;
 };
 
-const categories = ["All Categories", "Car", "Clothes", "Electronics", "Laptop", "Desktop", "Camera", "Toys"];
+const categories = ["همه محصولات", "Car", "Clothes", "Electronics", "Laptop", "Desktop", "Camera", "Toys"];
 const dummySearchResult = ["Macbook Air 13", "Asus K555LA", "Acer Aspire X453", "iPad Mini 3"];
 export default SearchBox;

@@ -49,7 +49,7 @@ const linkList = [{
   icon: ShoppingCart,
   count: 40
 }, {
-  href: '/vendor/account-settings',
+  href: '/vendor/account-profile',
   title: 'Account Settings',
   icon: Settings
 }];

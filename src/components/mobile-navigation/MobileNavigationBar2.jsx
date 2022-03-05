@@ -9,6 +9,9 @@ import { useAppContext } from "contexts/app/AppContext";
 import CategoryOutlined from "components/icons/CategoryOutline";
 import ShoppingBagOutlined from "components/icons/ShoppingBagOutlined"; // styled components
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import gift from "@mui/icons-material/RedeemOutlined";
+import favor from '@mui/icons-material/FavoriteBorder';
+
 
 const Wrapper = styled(Box)(({theme}) => ({
   display: "none",
@@ -109,7 +112,7 @@ const MobileNavigationBar2 = ({children}) => {
       {list.map(item => {
         if (item.href) {
           return <StyledNavLink href={item.href} key={item.title}>
-            {item.title === "خرید" ? <Badge badgeContent={cartList.length} color="primary" className={"cart-counter"}>
+            {item.title === "علاقه مندی" ? <Badge badgeContent={cartList.length} color="primary" className={"cart-counter"}>
               <item.icon fontSize="small" sx={iconStyle} />
             </Badge> : <item.icon sx={iconStyle} fontSize="small" />}
 
@@ -139,13 +142,13 @@ const list = [
     icon: CategoryOutlined,
     href: '/mobile-category-nav'
   }, {
-    title: "خرید",
-    icon: ShoppingBagOutlined,
-    href: "/cart"
+    title: "علاقه مندی",
+    icon: favor,
+    href: "/wishlist"
   }, {
-    title: "شخصی",
-    icon: User2,
-    href: "/profile"
+    title: "هدایا",
+    icon:  gift,
+    href: "/yourGifts"
   },{
     title: "بیشتر",
     icon:MoreVertIcon ,

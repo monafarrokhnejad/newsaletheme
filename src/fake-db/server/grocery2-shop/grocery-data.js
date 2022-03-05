@@ -108,6 +108,6 @@ export const grocery2Navigations = [{
   href: "/product/search/Dariry & Eggs"
 }, {
   icon: "Setting",
-  title: "تنظیمات",
-  href: "/settings"
+  title: "صفحه اطلاعات شخصی",
+  href: "/profile"
 }];

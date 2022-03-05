@@ -134,4 +134,26 @@ p{
     padding:  2px 10px;
     border-radius: 4px;
     margin-right: 8px;
+    color: white;
+}
+.add-photo{
+    position: absolute !important;
+    top: 115px !important;
+    background: #f68e1f !important;
+    color: white !important;
+    right: 8px !important;
+}
+.MuiModal-root{
+    z-index: 1201 !important;
+}
+.details-box{
+    background: #f68e1f;
+    color: white;
+    border-radius: 4px;
+    padding: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.details-box:hover{
+    opacity: 0.8;
 }
