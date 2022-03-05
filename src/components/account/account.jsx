@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import Link from 'next/link'
 import {Box} from "@mui/system";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -55,7 +56,7 @@ const Account = () => {
                 }}
                 sx={{zIndex:"9999"}}
             >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <MenuItem onClick={handleClose}><Link href={'/profile'}><a>صفحه شخصی</a></Link></MenuItem>
                 <MenuItem onClick={handleClose}>My account</MenuItem>
                 <MenuItem onClick={logOut}>خروج</MenuItem>
             </Menu>
