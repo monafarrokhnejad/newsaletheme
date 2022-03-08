@@ -118,7 +118,7 @@ const grocery2Navigations = [
   {
     icon: "OrderRecord",
     title: "ثبت سفارش",
-    href: "/order",
+    href: "/cart",
   },
   {
     icon: "Bills",
@@ -133,12 +133,12 @@ const grocery2Navigations = [
   {
     icon: "ContactUs",
     title: "ارتباط با ما",
-    href: "/product/search/Dariry & Eggs",
+    href: "/contact-us",
   },
   {
     icon: "Mail",
     title: "صندوق پیام ها",
-    href: "/product/search/Dariry & Eggs",
+    href: "/message",
   },
   {
     icon: "YourGift",
