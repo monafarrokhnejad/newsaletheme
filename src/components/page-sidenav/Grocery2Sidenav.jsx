@@ -1,16 +1,19 @@
 import React, { Fragment, useEffect, useState } from "react";
+import { useRouter } from "next/router";
+
+import SimpleBar from "simplebar-react";
+
 import { Box, Button } from "@mui/material";
 import { useTheme } from "@mui/system";
+import LogoutIcon from "@mui/icons-material/Logout";
+
 import appIcons from "components/icons";
-import SimpleBar from "simplebar-react";
 import FlexBox from "components/FlexBox";
 import BazarCard from "components/BazarCard";
 import { Span } from "components/Typography";
 import NavLink from "components/nav-link/NavLink";
 import Accordion from "components/accordion/Accordion";
-import AccordionHeader from "components/accordion/AccordionHeader"; // component props interface
-import LogoutIcon from "@mui/icons-material/Logout";
-import { useRouter } from "next/router";
+import AccordionHeader from "components/accordion/AccordionHeader";
 
 const Grocery2SideNav = (props) => {
   const router = useRouter();
@@ -128,20 +131,23 @@ const Grocery2SideNav = (props) => {
             </Box>
           );
         })}
-        <FlexBox py={0.75} color="inherit">
-          <Box ml={1.5}>
-            <LogoutIcon fontSize="small" />
-          </Box>
-          <Button
-            variant={"text"}
-            onClick={logOut}
-            style={{ padding: 0, display: "flex", alignItems: "flex-start" }}
-          >
-            <Span color="inherit" fontWeight="600" mr={1.125} flex="1 1 0">
-              خروج
-            </Span>
-          </Button>
-        </FlexBox>
+        <Button
+          variant={"contained"}
+          onClick={logOut}
+          style={{
+            color: "white",
+            marginBottom: "1rem",
+          }}
+          className={"details-box"}
+          color={"primary"}
+          fullWidth
+        >
+          <LogoutIcon
+            fontSize="small"
+            style={{ marginLeft: "5px", fontWeight: "normal !important" }}
+          />
+          خروج
+        </Button>
       </BazarCard>
     </SimpleBar>
   );

@@ -84,6 +84,23 @@ const news = () => {
         <Grid container>
           <Grid item col={12}>
             <Box position={"relative"} width={"100%"}>
+              <div
+                style={{
+                  color: "gray",
+                  fontSize: "12px",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  padding: " 7px 10px",
+                }}
+              >
+                <div>
+                  <span>ارسال توسط :</span>
+                  <span>مونافرخ نژاد</span>
+                </div>
+                <div className="data">
+                  <span>28 می 2020 </span>
+                </div>
+              </div>
               <img
                 style={{ borderRadius: "8px" }}
                 className="imageinner"
@@ -93,7 +110,9 @@ const news = () => {
             </Box>
           </Grid>
         </Grid>
-        <p>برنامه غذایی سیب</p>
+        <div>
+          <p>برنامه غذایی سیب</p>
+        </div>
 
         <H4 mt={5} mb={2}>
           سمپاشی زمستانه
