@@ -7,16 +7,13 @@ import Head from "next/head";
 import React, { Fragment, useCallback, useState } from "react";
 import GroceryHeader from "../header/GroceryHeader";
 
-const AppLayout = ({
-  children,
-  navbar,
-  title = "شرکت کشاورزی حاصل نوین"
-}) => {
+const AppLayout = ({ children, navbar, title = "شرکت کشاورزی حاصل نوین" }) => {
   const [isFixed, setIsFixed] = useState(false);
-  const toggleIsFixed = useCallback(fixed => {
+  const toggleIsFixed = useCallback((fixed) => {
     setIsFixed(fixed);
   }, []);
-  return <Fragment>
+  return (
+    <Fragment>
       <Head>
         <title>{title}</title>
         <meta charSet="utf-8" />
@@ -31,11 +28,16 @@ const AppLayout = ({
       </Sticky>
 
       {navbar && <div className="section-after-sticky">{navbar}</div>}
-      {!navbar ? <div className="section-after-sticky">{children}</div> : children}
+      {!navbar ? (
+        <div className="section-after-sticky">{children}</div>
+      ) : (
+        children
+      )}
 
       <MobileNavigationBar />
       <Footer />
-    </Fragment>;
+    </Fragment>
+  );
 };
 
 export default AppLayout;

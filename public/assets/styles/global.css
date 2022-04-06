@@ -45,7 +45,7 @@ body{
     .login-box {
         background-color: #f68e1f;
         height: 100vh;
-        background-image: url("vecBg.png");
+        background-image: url("../../vecBg.png");
         overflow: hidden;
         background-repeat: no-repeat;
         background-size: contain;
@@ -156,4 +156,15 @@ p{
 }
 .details-box:hover{
     opacity: 0.8;
+}
+.imageinner{
+position: relative;
+width: 100%;
+height: 100%;
+}
+.hr{
+    background-color: #cecece;
+    width: 100%;
+    height: 1px;
+    margin: 1.5rem 0;
 }

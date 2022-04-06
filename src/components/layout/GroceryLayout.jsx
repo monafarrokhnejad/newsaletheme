@@ -17,6 +17,12 @@ import GroceryFooter from "../grocery2/GroceryFooter";
 import MobileNavigationBar2 from "../mobile-navigation/MobileNavigationBar2";
 import Grocery2SideNav from "../page-sidenav/Grocery2Sidenav";
 import SidenavContainer from "../sidenav-container/SidenavContainer";
+import WhiteLayout from "./WhiteLayout";
+
+const sideItems = {
+  title: "دسته بندی اخبار",
+  items: ["برنامه غذایی", "اخبار کشاورزی"],
+};
 
 const GroceryLayout = ({
   children,
@@ -56,6 +62,7 @@ const GroceryLayout = ({
         <title>{title}</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="icon" href="./main.png" />
       </Head>
 
       <Topbar />
@@ -79,17 +86,23 @@ const GroceryLayout = ({
         sx={{ background: router.pathname === "/" ? "#fff" : "transparent" }}
       >
         <Box id="grocerySection" />
+
         <SidenavContainer
           navFixedComponentID={"grocerySection"}
           SideNav={() => (
-            <SimpleBar
-              style={{
-                boxShadow: shadows[1],
-                maxHeight: scrolled ? "100%" : `calc(100% - ${104}px)`,
-              }}
-            >
-              <Grocery2SideNav groceryNavigation={grocery2Navigations} />
-            </SimpleBar>
+            <>
+              <SimpleBar
+                style={{
+                  boxShadow: shadows[1],
+                  maxHeight: scrolled ? "100%" : `calc(100% - ${104}px)`,
+                }}
+              >
+                <Grocery2SideNav groceryNavigation={grocery2Navigations} />
+              </SimpleBar>
+              {router.pathname === "/news" && (
+                <WhiteLayout sideItems={sideItems} />
+              )}
+            </>
           )}
         >
           {children}

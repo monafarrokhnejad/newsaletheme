@@ -1,83 +1,83 @@
 import React from "react";
 import {
-    getSection4Products,
-    getSection5Products,
-    getSection7Products,
-    getSection8Products,
-    getSection9Testimonials
+  getSection4Products,
+  getSection5Products,
+  getSection7Products,
+  getSection8Products,
+  getSection9Testimonials,
 } from "/src/utils/api/grocery2-shop/carousels";
 import {
-    getSection2Services,
-    getSection3Categories,
-    getSection6CardList
+  getSection2Services,
+  getSection3Categories,
+  getSection6CardList,
 } from "/src/utils/api/grocery2-shop/sections";
-import {Box} from "@mui/material";
+import { Box } from "@mui/material";
 import GroceryLayout from "/src/components/layout/GroceryLayout";
-import GrocerySection0 from "../src/components/grocery2/GrocerySection0";
+import GrocerySection1 from "../src/components/grocery2/section1/GrocerySection1";
 import GrocerySection3 from "/src/components/grocery2/GrocerySection3";
 import GrocerySection4 from "/src/components/grocery2/GrocerySection4";
 import GrocerySection6 from "/src/components/grocery2/GrocerySection6";
 import GrocerySection9 from "/src/components/grocery2/GrocerySection9";
-import {getGroceryNavigation} from "/src/utils/api/grocery2-shop/navigation";
+import { getGroceryNavigation } from "/src/utils/api/grocery2-shop/navigation";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-const Home2 = props => {
-    const mobileSize = useMediaQuery('(max-width:960px)');
+const Home2 = (props) => {
+  const mobileSize = useMediaQuery("(max-width:960px)");
 
-    const {
-        section3Category,
-        section4Products,
-        section6CardList,
-        section9Testimonials,
-    } = props;
-    return <GroceryLayout>
+  const {
+    section3Category,
+    section4Products,
+    section6CardList,
+    section9Testimonials,
+  } = props;
+  return (
+    <GroceryLayout>
+      <Box mt={mobileSize ? 0 : 6} mb={6}>
+        <GrocerySection1 />
+      </Box>
 
-        <Box mt={mobileSize ? 0 : 6} mb={6}>
-            <GrocerySection0/>
-        </Box>
+      <Box mb={6}>
+        <GrocerySection3 categories={section3Category} />
+      </Box>
 
-        <Box mb={6}>
-            <GrocerySection3 categories={section3Category}/>
-        </Box>
+      <Box mb={6}>
+        <GrocerySection4 products={section4Products} />
+      </Box>
 
-        <Box mb={6}>
-            <GrocerySection4 products={section4Products}/>
-        </Box>
+      <Box mb={6}>
+        <GrocerySection6 cardList={section6CardList} />
+      </Box>
 
-        <Box mb={6}>
-            <GrocerySection6 cardList={section6CardList}/>
-        </Box>
-
-        <Box mb={6}>
-            <GrocerySection9 testimonials={section9Testimonials}/>
-        </Box>
-
-    </GroceryLayout>;
+      <Box mb={6}>
+        <GrocerySection9 testimonials={section9Testimonials} />
+      </Box>
+    </GroceryLayout>
+  );
 };
 
 export async function getStaticProps() {
-    const section2 = await getSection2Services();
-    const section4 = await getSection4Products();
-    const section5 = await getSection5Products();
-    const section6 = await getSection6CardList();
-    const section7 = await getSection7Products();
-    const section8 = await getSection8Products();
-    const section3 = await getSection3Categories();
-    const section9 = await getSection9Testimonials();
-    const groceryNavigationList = await getGroceryNavigation();
-    return {
-        props: {
-            groceryNavigationList,
-            section2Services: section2,
-            section3Category: section3,
-            section4Products: section4,
-            section5Products: section5,
-            section6CardList: section6,
-            section7Products: section7,
-            section8Products: section8,
-            section9Testimonials: section9
-        }
-    };
+  const section2 = await getSection2Services();
+  const section4 = await getSection4Products();
+  const section5 = await getSection5Products();
+  const section6 = await getSection6CardList();
+  const section7 = await getSection7Products();
+  const section8 = await getSection8Products();
+  const section3 = await getSection3Categories();
+  const section9 = await getSection9Testimonials();
+  const groceryNavigationList = await getGroceryNavigation();
+  return {
+    props: {
+      groceryNavigationList,
+      section2Services: section2,
+      section3Category: section3,
+      section4Products: section4,
+      section5Products: section5,
+      section6CardList: section6,
+      section7Products: section7,
+      section8Products: section8,
+      section9Testimonials: section9,
+    },
+  };
 }
 
 export default Home2;
