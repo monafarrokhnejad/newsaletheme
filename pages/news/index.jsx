@@ -2,33 +2,20 @@ import React from "react";
 import Link from "next/link";
 import GroceryLayout from "../../src/components/layout/GroceryLayout";
 import WhiteLayout from "../../src/components/layout/WhiteLayout";
-
+import { Badge, Box, Grid } from "@mui/material";
+import { H1, H6 } from "components/Typography";
+import data from "../../src/data/newsData";
+import EmailIcon from "@mui/icons-material/Email";
+import News from "../../src/components/news/News";
 const index = () => {
+  const newsData = data;
+
   return (
     <GroceryLayout>
       <WhiteLayout main={true} title={" همه اخبارها "}>
-        <ul>
-          <li>
-            <Link href={"/news/1"}>
-              <a>خبر یک</a>
-            </Link>
-          </li>
-          <li>
-            <Link href={"/news/2"}>
-              <a>خبر دو</a>
-            </Link>
-          </li>
-          <li>
-            <Link href={"/news/3"}>
-              <a>خبر سه</a>
-            </Link>
-          </li>
-          <li>
-            <Link href={"/news/4"}>
-              <a>خبر چهار</a>
-            </Link>
-          </li>
-        </ul>
+        {newsData.map((item) => (
+          <News item={item} />
+        ))}
       </WhiteLayout>
     </GroceryLayout>
   );
