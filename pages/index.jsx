@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   getSection4Products,
   getSection5Products,
@@ -6,20 +7,23 @@ import {
   getSection8Products,
   getSection9Testimonials,
 } from "/src/utils/api/grocery2-shop/carousels";
+
 import {
   getSection2Services,
   getSection3Categories,
   getSection6CardList,
 } from "/src/utils/api/grocery2-shop/sections";
-import { Box } from "@mui/material";
+
+import { getGroceryNavigation } from "/src/utils/api/grocery2-shop/navigation";
+
 import GroceryLayout from "/src/components/layout/GroceryLayout";
 import GrocerySection1 from "../src/components/grocery2/section1/GrocerySection1";
 import GrocerySection3 from "/src/components/grocery2/GrocerySection3";
 import GrocerySection4 from "/src/components/grocery2/GrocerySection4";
 import GrocerySection6 from "/src/components/grocery2/GrocerySection6";
 import GrocerySection9 from "/src/components/grocery2/GrocerySection9";
-import { getGroceryNavigation } from "/src/utils/api/grocery2-shop/navigation";
-import useMediaQuery from "@mui/material/useMediaQuery";
+
+import { Box, useMediaQuery } from "@mui/material";
 
 const Home2 = (props) => {
   const mobileSize = useMediaQuery("(max-width:960px)");

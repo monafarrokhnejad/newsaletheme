@@ -10,7 +10,7 @@ import Points from "../src/components/gift-page/points/Points";
 const yourGifts = () => {
   return (
     <GroceryLayout>
-      <WhiteLayout>
+      <WhiteLayout main={true}>
         <H3 marginBottom={3}>هدایای شما</H3>
         <Grid
           flexDirection={"row-reverse"}
@@ -27,7 +27,7 @@ const yourGifts = () => {
         </Grid>
       </WhiteLayout>
 
-      <WhiteLayout>
+      <WhiteLayout main={true}>
         <UsedGifts />
       </WhiteLayout>
     </GroceryLayout>

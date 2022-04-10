@@ -30,6 +30,7 @@ const GroceryLayout = ({
   title = "سامانه فروش حاصل نوین",
 }) => {
   const router = useRouter();
+  console.log(router);
   useEffect(() => {
     const isLogin = () => !!localStorage.getItem("x-auth-token");
     if (!isLogin()) {
@@ -99,7 +100,7 @@ const GroceryLayout = ({
               >
                 <Grocery2SideNav groceryNavigation={grocery2Navigations} />
               </SimpleBar>
-              {router.pathname === "/news" && (
+              {router.pathname.indexOf("news") && (
                 <WhiteLayout sideItems={sideItems} />
               )}
             </>

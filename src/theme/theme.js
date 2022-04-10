@@ -10,7 +10,7 @@ const THEMES = {
   GROCERY: "GROCERY",
   FURNITURE: "FURNITURE",
   HEALTH: "HEALTH",
-  GIFT: "GIFT"
+  GIFT: "GIFT",
 };
 const breakpoints = {
   values: {
@@ -18,77 +18,62 @@ const breakpoints = {
     sm: 600,
     md: 960,
     lg: 1280,
-    xl: 1920
-  }
+    xl: 1920,
+  },
 };
 const themesOptions = {
   [THEMES.DEFAULT]: {
     breakpoints,
-    components: { ...components
-    },
+    components: { ...components },
     palette: {
-      primary: { ...primary,
-        light: primary[100]
-      },
-      ...themeColors
+      primary: { ...primary, light: primary[100] },
+      ...themeColors,
     },
-    typography
+    typography,
   },
   [THEMES.GROCERY]: {
     breakpoints,
-    components: { ...components
-    },
+    components: { ...components },
     palette: {
-      primary: { ...primary,
-        light: primary[100]
-      },
-      ...themeColors
+      primary: { ...primary, light: primary[100] },
+      ...themeColors,
     },
-    typography
+    typography,
   },
   [THEMES.FURNITURE]: {
     breakpoints,
-    components: { ...components
-    },
+    components: { ...components },
     palette: {
-      primary: { ...paste,
-        light: paste[100]
-      },
-      ...themeColors
+      primary: { ...paste, light: paste[100] },
+      ...themeColors,
     },
-    typography
+    typography,
   },
   [THEMES.HEALTH]: {
     breakpoints,
-    components: { ...components
-    },
+    components: { ...components },
     palette: {
-      primary: { ...blue,
-        light: blue[100]
-      },
-      ...themeColors
+      primary: { ...blue, light: blue[100] },
+      ...themeColors,
     },
-    typography
+    typography,
   },
   [THEMES.GIFT]: {
     breakpoints,
-    components: { ...components
-    },
+    components: { ...components },
     palette: {
-      primary: { ...marron,
-        light: marron[100]
-      },
-      ...themeColors
+      primary: { ...marron, light: marron[100] },
+      ...themeColors,
     },
-    typography
-  }
+    typography,
+  },
 };
 export const bazarTheme = () => {
-  const {pathname} = useRouter();
-  const {publicRuntimeConfig} = getConfig();
+  const { pathname } = useRouter();
+  const { publicRuntimeConfig } = getConfig();
   /*============ Remove following code ==============*/
 
-  const updateTheme = themeName => {
+  const updateTheme = (themeName) => {
     publicRuntimeConfig.theme = themeName;
     themeOptions = themesOptions[publicRuntimeConfig.theme];
   };

@@ -9,7 +9,15 @@ import Favorite from "@mui/icons-material/Favorite";
 import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import Remove from "@mui/icons-material/Remove";
 import RemoveRedEye from "@mui/icons-material/RemoveRedEye";
-import { Box, Button, Chip, Dialog, DialogContent, IconButton, styled } from "@mui/material";
+import {
+  Box,
+  Button,
+  Chip,
+  Dialog,
+  DialogContent,
+  IconButton,
+  styled,
+} from "@mui/material";
 import Link from "next/link";
 import React, { Fragment, useCallback, useState } from "react";
 import FlexBox from "../FlexBox";
@@ -17,9 +25,7 @@ import { useTheme } from "@mui/system";
 import PreviewIcon from "@mui/icons-material/RemoveRedEye";
 import FavoriteIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-const StyledBazarCard = styled(BazarCard)(({
-  theme
-}) => ({
+const StyledBazarCard = styled(BazarCard)(({ theme }) => ({
   position: "relative",
   display: "flex",
   flexDirection: "column",
@@ -32,30 +38,26 @@ const StyledBazarCard = styled(BazarCard)(({
   "&:hover": {
     // boxShadow: theme.shadows[2],
     "& .css-1i2n18j": {
-      display: "flex"
+      display: "flex",
     },
     "& .controlBox": {
-      display: "block"
-    }
-  }
+      display: "block",
+    },
+  },
 }));
-const ImageWrapper = styled(Box)(({
-  theme
-}) => ({
+const ImageWrapper = styled(Box)(({ theme }) => ({
   position: "relative",
   display: "inline-block",
   textAlign: "center",
   [theme.breakpoints.down("sm")]: {
-    display: "block"
-  }
+    display: "block",
+  },
 }));
 const ImageBox = styled(Box)(() => ({
   padding: "44px 40px",
-  background: "#fff"
+  background: "#fff",
 }));
-const ItemController = styled(Box)(({
-  theme
-}) => ({
+const ItemController = styled(Box)(({ theme }) => ({
   display: "none",
   transition: "all 250ms ease-in-out",
   "& .controller": {
@@ -80,8 +82,8 @@ const ItemController = styled(Box)(({
       alignItems: "center",
       "&:hover": {
         cursor: "pointer",
-        background: "#f3f5f9"
-      }
+        background: "#f3f5f9",
+      },
     },
     "& a": {
       width: "100%",
@@ -90,14 +92,14 @@ const ItemController = styled(Box)(({
       alignItems: "center",
       "&:hover": {
         cursor: "pointer",
-        background: "#f3f5f9"
-      }
+        background: "#f3f5f9",
+      },
     },
     "& svg": {
       fontSize: 18,
-      color: theme.palette.grey[600]
-    }
-  }
+      color: theme.palette.grey[600],
+    },
+  },
 }));
 const StyledChip = styled(Chip)(() => ({
   position: "absolute",
@@ -108,11 +110,9 @@ const StyledChip = styled(Chip)(() => ({
   top: "10px",
   right: "10px",
   zIndex: 11,
-  color:"white"
+  color: "white",
 }));
-const HoverIconWrapper = styled(Box)(({
-  theme
-}) => ({
+const HoverIconWrapper = styled(Box)(({ theme }) => ({
   display: "none",
   flexDirection: "column",
   position: "absolute",
@@ -121,172 +121,228 @@ const HoverIconWrapper = styled(Box)(({
   cursor: "pointer",
   zIndex: 2,
   [theme.breakpoints.down("md")]: {
-    display: "flex"
-  }
+    display: "flex",
+  },
 }));
 const ContentWrapper = styled(Box)(() => ({
   padding: "1rem",
   "& .title, & .categories": {
     whiteSpace: "nowrap",
     overflow: "hidden",
-    textOverflow: "ellipsis"
-  }
+    textOverflow: "ellipsis",
+  },
 }));
 
-const ProductCard13 = props => {
-  const {
-    off,
-    id,
-    title,
-    price,
-    imgUrl,
-    rating,
-    hideRating,
-    hoverEffect
-  } = props;
-  const {
-    palette
-  } = useTheme();
+const ProductCard13 = (props) => {
+  const { off, id, title, price, imgUrl, rating, hideRating, hoverEffect } =
+    props;
+  const { palette } = useTheme();
   const [isFavorite, setIsFavorite] = useState(false);
   const [open, setOpen] = useState(false);
-  const {
-    state,
-    dispatch
-  } = useAppContext();
-  const cartItem = state.cart.cartList.find(item => item.id === id);
+  const { state, dispatch } = useAppContext();
+  const cartItem = state.cart.cartList.find((item) => item.id === id);
   const toggleDialog = useCallback(() => {
-    setOpen(open => !open);
+    setOpen((open) => !open);
   }, []);
 
   const toggleIsFavorite = async () => {
-    setIsFavorite(fav => !fav);
+    setIsFavorite((fav) => !fav);
   };
 
-  const handleCartAmountChange = useCallback(amount => () => {
-    dispatch({
-      type: "CHANGE_CART_AMOUNT",
-      payload: {
-        name: title,
-        qty: amount,
-        price,
-        imgUrl,
-        id
-      }
-    });
-  }, []);
-  return <StyledBazarCard hoverEffect={hoverEffect}>
-      <ImageWrapper >
-        {off !== 0 && <StyledChip color="primary" size="small" label={`${off}% تخفیف`} />}
+  const handleCartAmountChange = useCallback(
+    (amount) => () => {
+      dispatch({
+        type: "CHANGE_CART_AMOUNT",
+        payload: {
+          name: title,
+          qty: amount,
+          price,
+          imgUrl,
+          id,
+        },
+      });
+    },
+    []
+  );
+  return (
+    <StyledBazarCard hoverEffect={hoverEffect}>
+      <ImageWrapper>
+        {off !== 0 && (
+          <StyledChip color="primary" size="small" label={`${off}% تخفیف`} />
+        )}
 
         <HoverIconWrapper>
-          <IconButton sx={{
-          p: "6px"
-        }} onClick={toggleDialog}>
+          <IconButton
+            sx={{
+              p: "6px",
+            }}
+            onClick={toggleDialog}
+          >
             <RemoveRedEye color="secondary" fontSize="small" />
           </IconButton>
-          <IconButton sx={{
-          p: "6px"
-        }} onClick={toggleIsFavorite}>
-            {isFavorite ? <Favorite color="primary" fontSize="small" /> : <FavoriteBorder fontSize="small" />}
+          <IconButton
+            sx={{
+              p: "6px",
+            }}
+            onClick={toggleIsFavorite}
+          >
+            {isFavorite ? (
+              <Favorite color="primary" fontSize="small" />
+            ) : (
+              <FavoriteBorder fontSize="small" />
+            )}
           </IconButton>
         </HoverIconWrapper>
 
         <ImageBox>
           <Link href={`/product/${id}`}>
             <a>
-              <LazyImage alt={title} src={imgUrl} width={190} height={190} layout="responsive" objectFit="contain" />
+              <LazyImage
+                alt={title}
+                src={imgUrl}
+                width={190}
+                height={190}
+                layout="responsive"
+                objectFit="contain"
+              />
             </a>
           </Link>
 
-          {/*<ItemController className="controlBox">*/}
-          {/*  <Box className="controller">*/}
-          {/*    <Link href={`/product/${id}`}>*/}
-          {/*      <a>*/}
-          {/*        <Span>*/}
-          {/*          <PreviewIcon />*/}
-          {/*        </Span>*/}
-          {/*      </a>*/}
-          {/*    </Link>*/}
+          {/* <ItemController className="controlBox">
+            <Box className="controller">
+              <Link href={`/product/${id}`}>
+                <a>
+                  <Span>
+                    <PreviewIcon />
+                  </Span>
+                </a>
+              </Link>
 
-          {/*    <Span sx={{*/}
-          {/*    borderLeft: `1px solid ${palette.grey[300]}`,*/}
-          {/*    borderRight: `1px solid ${palette.grey[300]}`*/}
-          {/*  }}>*/}
-          {/*      <FavoriteIcon />*/}
-          {/*    </Span>*/}
-          {/*    <Span onClick={handleCartAmountChange((cartItem?.qty || 0) + 1)}>*/}
-          {/*      <ShoppingCartIcon />*/}
-          {/*    </Span>*/}
-          {/*  </Box>*/}
-          {/*</ItemController>*/}
+              <Span
+                sx={{
+                  borderLeft: `1px solid ${palette.grey[300]}`,
+                  borderRight: `1px solid ${palette.grey[300]}`,
+                }}
+              >
+                <FavoriteIcon />
+              </Span>
+              <Span onClick={handleCartAmountChange((cartItem?.qty || 0) + 1)}>
+                <ShoppingCartIcon />
+              </Span>
+            </Box>
+          </ItemController> */}
         </ImageBox>
       </ImageWrapper>
 
       <ContentWrapper>
         <FlexBox>
-          <FlexBox className="add-cart" flexDirection="column-reverse" alignItems="center" justifyContent={!!cartItem?.qty ? "space-between" : "flex-start"} width="30px">
-            <Button variant="outlined" color="primary" sx={{
-              padding: "3px"
-            }} onClick={handleCartAmountChange((cartItem?.qty || 0) + 1)}>
+          <FlexBox
+            className="add-cart"
+            flexDirection="column-reverse"
+            alignItems="center"
+            justifyContent={!!cartItem?.qty ? "space-between" : "flex-start"}
+            width="30px"
+          >
+            <Button
+              variant="outlined"
+              color="primary"
+              sx={{
+                padding: "3px",
+              }}
+              onClick={handleCartAmountChange((cartItem?.qty || 0) + 1)}
+            >
               <Add fontSize="small" />
             </Button>
 
-            {!!cartItem?.qty && <Fragment>
-              <Box color="text.primary" fontWeight="600">
-                {cartItem?.qty}
-              </Box>
-              <Button variant="outlined" color="primary" sx={{
-                padding: "3px"
-              }} onClick={handleCartAmountChange(cartItem?.qty - 1)}>
-                <Remove fontSize="small" />
-              </Button>
-            </Fragment>}
+            {!!cartItem?.qty && (
+              <Fragment>
+                <Box color="text.primary" fontWeight="600">
+                  {cartItem?.qty}
+                </Box>
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  sx={{
+                    padding: "3px",
+                  }}
+                  onClick={handleCartAmountChange(cartItem?.qty - 1)}
+                >
+                  <Remove fontSize="small" />
+                </Button>
+              </Fragment>
+            )}
           </FlexBox>
 
           <Box flex="1 1 0" minWidth="0px" ml={1}>
             <Link href={`/product/${id}`}>
               <a>
-                <H3 className="title" fontSize="14px" textAlign="right" fontWeight="600" color="text.secondary" mb={1} title={title}>
+                <H3
+                  className="title"
+                  fontSize="14px"
+                  textAlign="right"
+                  fontWeight="600"
+                  color="text.secondary"
+                  mb={1}
+                  title={title}
+                >
                   {title}
                 </H3>
               </a>
             </Link>
 
-            <Box display="flex" justifyContent={"end"} alignItems="center" style={{margin: '8px 0 '}}>
-                {/*<BazarRating value={rating || 0} color="warn" readOnly />{" "}*/}
-              <Span sx={{
-                color: palette.grey[600]
-              }}>{`(${rating}.0)`}</Span>
-              </Box>
+            <Box
+              display="flex"
+              justifyContent={"end"}
+              alignItems="center"
+              style={{ margin: "8px 0 " }}
+            >
+              {/*<BazarRating value={rating || 0} color="warn" readOnly />{" "}*/}
+              <Span
+                sx={{
+                  color: palette.grey[600],
+                }}
+              >{`(${rating}.0)`}</Span>
+            </Box>
 
-            <FlexBox justifyContent={"end"} display={"flex"} alignItems="center" mt={0.5}>
-              <Box  pr={1} fontWeight="600" color="primary.main">
-                ${(price - price * off / 100).toFixed(2)}
+            <FlexBox
+              justifyContent={"end"}
+              display={"flex"}
+              alignItems="center"
+              mt={0.5}
+            >
+              <Box pr={1} fontWeight="600" color="primary.main">
+                ${(price - (price * off) / 100).toFixed(2)}
               </Box>
-              {
-                off !== 0 && <Box color="grey.600" fontWeight="600">
+              {off !== 0 && (
+                <Box color="grey.600" fontWeight="600">
                   <del>{price?.toFixed(2)}</del>
                 </Box>
-              }
+              )}
             </FlexBox>
           </Box>
         </FlexBox>
       </ContentWrapper>
 
       <Dialog open={open} maxWidth={false} onClose={toggleDialog}>
-        <DialogContent sx={{
-        paddingBottom: "1.25rem"
-      }}>
-          <IconButton sx={{
-          position: "absolute",
-          top: "0",
-          right: "0"
-        }} onClick={toggleDialog}>
+        <DialogContent
+          sx={{
+            paddingBottom: "1.25rem",
+          }}
+        >
+          <IconButton
+            sx={{
+              position: "absolute",
+              top: "0",
+              right: "0",
+            }}
+            onClick={toggleDialog}
+          >
             <Close className="close" fontSize="small" color="primary" />
           </IconButton>
         </DialogContent>
       </Dialog>
-    </StyledBazarCard>;
+    </StyledBazarCard>
+  );
 };
 
 export default ProductCard13;

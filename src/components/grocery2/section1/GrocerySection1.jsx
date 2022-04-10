@@ -63,7 +63,6 @@ const GrocerySection1 = () => {
   const [value, setValue] = useState(0);
   const [orientation, setOrientation] = useState("vertical");
   const mobileSize = useMediaQuery("(max-width:850px)");
-  console.log(mobileSize);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };

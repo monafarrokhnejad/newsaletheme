@@ -38,7 +38,7 @@ const WhiteLayout = (props) => {
             {props.sideItems.items.map((item, index) => {
               return (
                 <li>
-                  <Link href="/">
+                  <Link href="/news">
                     <StyledLink>
                       <i style={{ marginLeft: "10px" }}>-</i>
                       <span>{item}</span>

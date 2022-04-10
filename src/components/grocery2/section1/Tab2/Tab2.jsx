@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import Carousel from "components/carousel/Carousel";
 import { H1, H6 } from "components/Typography";
+import data from "../../../../data/newsData";
 
 import { Badge, Box, Grid } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
@@ -11,6 +12,7 @@ import StyledBox from "./StyledBox";
 import StyledGrid from "./StyledGrid";
 
 const Tab2 = () => {
+  const newsData = data;
   return (
     <StyledBox>
       <Carousel
@@ -38,7 +40,7 @@ const Tab2 = () => {
                 {_item.title}
               </H1>
               <H6 maxWidth="470px" color="inherit" fontWeight="400" mb={1}>
-                <Link href="/news">
+                <Link href={`/news/${_item.title}`}>
                   <a>{_item.description}</a>
                 </Link>
               </H6>
@@ -88,40 +90,5 @@ const Tab2 = () => {
     </StyledBox>
   );
 };
-const newsData = [
-  {
-    image: "/assets/images/newsletters/Bonitto-banner.jpg",
-    title: "برنامه غذایی",
-    description: "برنامه غذایی خیار گلخانه ای",
-    sender: "مونا فرخ نژاد",
-    commentCount: "3",
-    date: "28 آوریل",
-  },
-  {
-    image: "/assets/images/newsletters/apple.jpg",
-    title: "برنامه غذایی",
-    description: "برنامه غذایی خیار گلخانه ای",
-    sender: " پریسا رضایی ",
-    commentCount: "5",
-    date: "26 مه",
-  },
-  {
-    image: "/assets/images/newsletters/Dalgin-Cover-2-1.jpg",
-    title: " اخبار کشاورزی",
-    description:
-      "تاثیر محرک رشد دالجین عصاره (Ascophyllum Nodosum) بر روی صفات مورفولوژیکی، عملکرد و اجزای عملکرد ارقام سیب زمینی",
-    sender: "سینا سهبا ",
-    commentCount: "0",
-    date: "12 آوریل",
-  },
-  {
-    image: "/assets/images/newsletters/marmarine-cover-1.jpg",
-    title: " اخبار کشاورزی",
-    description:
-      "  بررسی محلول پاشی عصاره جلبک دریایی (مارمارین) بر روی عملکرد و اجزای عملکرد کشت دوم ارقام",
-    sender: "سهند تصدیقی  ",
-    commentCount: "2",
-    date: "15 ژوئن",
-  },
-];
+
 export default Tab2;
