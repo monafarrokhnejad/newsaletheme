@@ -73,7 +73,6 @@ const News = ({ news }) => {
 
 const index = (props) => {
   const router = useRouter();
-  console.log("my nes log :", router);
   const { title } = router.query;
   const [news, setNews] = useState();
 
@@ -83,13 +82,15 @@ const index = (props) => {
       setNews(newsData);
     }
   }, [title]);
-
   return (
     <GroceryLayout>
       {news ? (
         <News news={news} />
       ) : (
-        <WhiteLayout main={true}>nothing</WhiteLayout>
+        <WhiteLayout
+          main={true}
+          title={"هیچ اخباری با این عنوان وجود ندارد."}
+        ></WhiteLayout>
       )}
     </GroceryLayout>
   );

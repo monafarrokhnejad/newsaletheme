@@ -17,6 +17,8 @@ const MegaMenu1 = ({
         sx={{
           mr: "1rem",
           minWidth,
+          height: "500px",
+          overflowY: "auto",
         }}
       >
         <FlexBox px={2.5} py={1.75} alignItems="unset">

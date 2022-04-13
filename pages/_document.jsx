@@ -16,6 +16,7 @@ export default class Bazar extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
           />
+          <link rel="shortcut icon" href="/fav.ico" />
         </Head>
         <body>
           <Main />

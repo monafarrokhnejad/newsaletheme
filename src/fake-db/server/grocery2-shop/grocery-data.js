@@ -17,38 +17,38 @@ export const serviceList = [
 ];
 export const shopByCategory = [
   {
-    imgUrl: "/assets/images/icons/testsvg.svg",
+    imgUrl: "/assets/images/icons/pro_icons/eslah.svg",
     title: "کودهای اصلاح کننده",
     subtitle: "60% تخفیف",
     url: "/",
   },
   {
-    imgUrl: "/assets/images/icons/fish.svg",
-    title: "کودهای دومنظوره",
+    imgUrl: "/assets/images/icons/pro_icons/mohafezat.svg",
+    title: "کودهای محافظت کننده",
     subtitle: "60% تخفیف",
     url: "/",
   },
   {
-    imgUrl: "/assets/images/icons/wheat-flour.svg",
+    imgUrl: "/assets/images/icons/pro_icons/taghzieh.svg",
     title: "کودهای تغذیه ای",
     subtitle: "60% تخفیف",
     url: "/",
   },
   {
-    imgUrl: "/assets/images/products/Orange 1kg 2.png",
+    imgUrl: "/assets/images/icons/pro_icons/moharek.svg",
     title: "کودهای محرک رشد",
     subtitle: "60% تخفیف",
     url: "/",
   },
   {
-    imgUrl: "/assets/images/icons/feeding-bottle.svg",
-    title: "بذر گلخانه ای",
+    imgUrl: "/assets/images/icons/pro_icons/tanesh.svg",
+    title: "کد های ضد تنش",
     subtitle: "60% تخفیف",
     url: "/",
   },
   {
-    imgUrl: "/assets/images/icons/skincare.svg",
-    title: "بذر فضای باز",
+    imgUrl: "/assets/images/icons/pro_icons/hybrid.svg",
+    title: "بذر های هیبرید",
     subtitle: "60% تخفیف",
     url: "/",
   },

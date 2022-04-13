@@ -1,13 +1,13 @@
-import Accordion from '/src/components/accordion/Accordion';
-import AccordionHeader from '/src/components/accordion/AccordionHeader';
-import Header from '/src/components/header/Header';
-import MobileCategoryImageBox from '/src/components/mobile-category-nav/MobileCategoryImageBox';
-import MobileCategoryNavStyle from '/src/components/mobile-category-nav/MobileCategoryNavStyle';
-import MobileNavigationBar from '/src/components/mobile-navigation/MobileNavigationBar';
-import navigations from '/src/data/navigations';
-import { Box, Divider, Grid, Typography } from '@mui/material';
-import Link from 'next/link';
-import React, { Fragment, useEffect, useState } from 'react';
+import Accordion from "/src/components/accordion/Accordion";
+import AccordionHeader from "/src/components/accordion/AccordionHeader";
+import Header from "/src/components/header/Header";
+import MobileCategoryImageBox from "/src/components/mobile-category-nav/MobileCategoryImageBox";
+import MobileCategoryNavStyle from "/src/components/mobile-category-nav/MobileCategoryNavStyle";
+import MobileNavigationBar from "/src/components/mobile-navigation/MobileNavigationBar";
+import navigations from "/src/data/navigations";
+import { Box, Divider, Grid, Typography } from "@mui/material";
+import Link from "next/link";
+import React, { Fragment, useEffect, useState } from "react";
 import MobileNavigationBar2 from "../src/components/mobile-navigation/MobileNavigationBar2";
 import GroceryHeader from "../src/components/header/GroceryHeader";
 import Topbar from "../src/components/topbar/Topbar";
@@ -17,7 +17,7 @@ const MobileCategoryNav = () => {
   const [suggestedList, setSuggestedList] = useState([]);
   const [subCategoryList, setSubCategoryList] = useState([]);
 
-  const handleCategoryClick = cat => () => {
+  const handleCategoryClick = (cat) => () => {
     let menuData = cat.menuData;
 
     if (menuData) {
@@ -31,38 +31,61 @@ const MobileCategoryNav = () => {
     setSuggestedList(suggestion);
   }, []);
 
-  return <MobileCategoryNavStyle>
-    <Topbar/>
+  return (
+    <MobileCategoryNavStyle>
+      <Topbar />
       <GroceryHeader className="header" />
       <div className="main-category-holder">
-        {navigations.map(item => <Box className="main-category-box" borderLeft={`${category?.href === item.href ? '3' : '0'}px solid`} onClick={handleCategoryClick(item)} key={item.title}>
-            <item.icon sx={{
-          fontSize: '28px',
-          mb: '0.5rem'
-        }} />
-            <Typography className="ellipsis" textAlign="center" fontSize="11px" lineHeight="1">
+        {navigations.map((item) => (
+          <Box
+            className="main-category-box"
+            borderLeft={`${category?.href === item.href ? "3" : "0"}px solid`}
+            onClick={handleCategoryClick(item)}
+            key={item.title}
+          >
+            <item.icon
+              sx={{
+                fontSize: "28px",
+                mb: "0.5rem",
+              }}
+            />
+            <Typography
+              className="ellipsis"
+              textAlign="center"
+              fontSize="11px"
+              lineHeight="1"
+            >
               {item.title}
             </Typography>
-          </Box>)}
+          </Box>
+        ))}
       </div>
-      <Box className="container" width={'100%'}>
+      <Box
+        className="container"
+        width={"100%"}
+        style={{ paddingLeft: "105px" }}
+      >
         <Typography fontWeight="600" fontSize="15px" mb={2}>
           محصولات شما
         </Typography>
         <Box mb={4} display={"none"}>
           <Grid container spacing={3}>
-            {suggestedList.map((item, ind) => <Grid item lg={1} md={2} sm={3} xs={4} key={ind}>
+            {suggestedList.map((item, ind) => (
+              <Grid item lg={1} md={2} sm={3} xs={4} key={ind}>
                 <Link href="/product/search/423423">
                   <a>
                     <MobileCategoryImageBox {...item} />
                   </a>
                 </Link>
-              </Grid>)}
+              </Grid>
+            ))}
           </Grid>
         </Box>
 
-        {category?.menuComponent === 'MegaMenu1' ? subCategoryList.map((item, ind) => <Fragment key={ind}>
-              <Divider />
+        {category?.menuComponent === "MegaMenu1" ? (
+          subCategoryList.map((item, ind) => (
+            <Fragment key={ind}>
+              {/* <Divider /> */}
               <Accordion>
                 <AccordionHeader px={0} py={1.25}>
                   <Typography fontWeight="600" fontSize="15px">
@@ -71,64 +94,82 @@ const MobileCategoryNav = () => {
                 </AccordionHeader>
                 <Box mb={4} mt={1}>
                   <Grid container spacing={3}>
-                    {item.subCategories?.map((item, ind) => <Grid item lg={1} md={2} sm={3} xs={4} key={ind}>
+                    {item.subCategories?.map((item, ind) => (
+                      <Grid item lg={1} md={2} sm={3} xs={4} key={ind}>
                         <Link href="/product/search/423423">
                           <a>
                             <MobileCategoryImageBox {...item} />
                           </a>
                         </Link>
-                      </Grid>)}
+                      </Grid>
+                    ))}
                   </Grid>
                 </Box>
               </Accordion>
-            </Fragment>) : <Box mb={4}>
+            </Fragment>
+          ))
+        ) : (
+          <Box mb={4}>
             <Grid container spacing={3}>
-              {subCategoryList.map((item, ind) => <Grid item lg={1} md={2} sm={3} xs={4} key={ind}>
+              {subCategoryList.map((item, ind) => (
+                <Grid item lg={1} md={2} sm={3} xs={4} key={ind}>
                   <Link href="/product/search/423423">
                     <a>
                       <MobileCategoryImageBox {...item} />
                     </a>
                   </Link>
-                </Grid>)}
+                </Grid>
+              ))}
             </Grid>
-          </Box>}
+          </Box>
+        )}
       </Box>
 
       <MobileNavigationBar />
-    </MobileCategoryNavStyle>;
+    </MobileCategoryNavStyle>
+  );
 };
 
-const suggestion = [{
-  title: 'Belt',
-  href: '/belt',
-  imgUrl: '/assets/images/products/categories/belt.png'
-}, {
-  title: 'Hat',
-  href: '/Hat',
-  imgUrl: '/assets/images/products/categories/hat.png'
-}, {
-  title: 'Watches',
-  href: '/Watches',
-  imgUrl: '/assets/images/products/categories/watch.png'
-}, {
-  title: 'Sunglasses',
-  href: '/Sunglasses',
-  imgUrl: '/assets/images/products/categories/sunglass.png'
-}, {
-  title: 'Sneakers',
-  href: '/Sneakers',
-  imgUrl: '/assets/images/products/categories/sneaker.png'
-}, {
-  title: 'Sandals',
-  href: '/Sandals',
-  imgUrl: '/assets/images/products/categories/sandal.png'
-}, {
-  title: 'Formal',
-  href: '/Formal',
-  imgUrl: '/assets/images/products/categories/shirt.png'
-}, {
-  title: 'Casual',
-  href: '/Casual',
-  imgUrl: '/assets/images/products/categories/t-shirt.png'
-}];
+const suggestion = [
+  {
+    title: "Belt",
+    href: "/belt",
+    imgUrl: "/assets/images/products/categories/belt.png",
+  },
+  {
+    title: "Hat",
+    href: "/Hat",
+    imgUrl: "/assets/images/products/categories/hat.png",
+  },
+  {
+    title: "Watches",
+    href: "/Watches",
+    imgUrl: "/assets/images/products/categories/watch.png",
+  },
+  {
+    title: "Sunglasses",
+    href: "/Sunglasses",
+    imgUrl: "/assets/images/products/categories/sunglass.png",
+  },
+  {
+    title: "Sneakers",
+    href: "/Sneakers",
+    imgUrl: "/assets/images/products/categories/sneaker.png",
+  },
+  {
+    title: "Sandals",
+    href: "/Sandals",
+    imgUrl: "/assets/images/products/categories/sandal.png",
+  },
+  {
+    title: "Formal",
+    href: "/Formal",
+    imgUrl: "/assets/images/products/categories/shirt.png",
+  },
+  {
+    title: "Casual",
+    href: "/Casual",
+    imgUrl: "/assets/images/products/categories/t-shirt.png",
+  },
+];
 export default MobileCategoryNav;
