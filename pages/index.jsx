@@ -9,12 +9,9 @@ import {
 } from "/src/utils/api/grocery2-shop/carousels";
 
 import {
-  getSection2Services,
   getSection3Categories,
   getSection6CardList,
 } from "/src/utils/api/grocery2-shop/sections";
-
-import { getGroceryNavigation } from "/src/utils/api/grocery2-shop/navigation";
 
 import GroceryLayout from "/src/components/layout/GroceryLayout";
 import GrocerySection1 from "../src/components/grocery2/section1/GrocerySection1";
@@ -22,6 +19,7 @@ import GrocerySection3 from "/src/components/grocery2/GrocerySection3";
 import GrocerySection4 from "/src/components/grocery2/GrocerySection4";
 import GrocerySection6 from "/src/components/grocery2/GrocerySection6";
 import GrocerySection9 from "/src/components/grocery2/GrocerySection9";
+import GrocerySection10 from "/src/components/grocery2/GrocerySection10";
 
 import { Box, useMediaQuery } from "@mui/material";
 
@@ -55,24 +53,23 @@ const Home2 = (props) => {
       <Box mb={6}>
         <GrocerySection9 testimonials={section9Testimonials} />
       </Box>
+      <Box>
+        <GrocerySection10 />
+      </Box>
     </GroceryLayout>
   );
 };
 
 export async function getStaticProps() {
-  const section2 = await getSection2Services();
+  const section3 = await getSection3Categories();
   const section4 = await getSection4Products();
   const section5 = await getSection5Products();
   const section6 = await getSection6CardList();
   const section7 = await getSection7Products();
   const section8 = await getSection8Products();
-  const section3 = await getSection3Categories();
   const section9 = await getSection9Testimonials();
-  const groceryNavigationList = await getGroceryNavigation();
   return {
     props: {
-      groceryNavigationList,
-      section2Services: section2,
       section3Category: section3,
       section4Products: section4,
       section5Products: section5,
