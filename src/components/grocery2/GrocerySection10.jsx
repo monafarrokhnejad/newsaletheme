@@ -34,7 +34,7 @@ const GrocerySection10 = () => {
       <StyledGridContainer container alignItems={"center"}>
         {Amar.map((item) => {
           return (
-            <Grid item md={3} textAlign={"center"}>
+            <Grid key={item.id} item md={3} textAlign={"center"}>
               <div className="title">
                 <span>{item.number}</span>
               </div>
