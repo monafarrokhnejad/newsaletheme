@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-import FlexBox from "/src/components/FlexBox";
-import Login from "/src/components/sessions/Login";
-import Head from "next/head";
 import { useRouter } from "next/router";
 
+import FlexBox from "/src/components/FlexBox";
+import Login from "../src/components/sessions/Login.jsx";
+import Head from "next/head";
+
 const LoginPage = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    // checks if the user is authenticated
+    const isLogin = () => !!window.localStorage.getItem("x-auth-token");
+    isLogin() ? router.push("/") : router.push("/login");
+  }, []);
   return (
     <>
       <Head>

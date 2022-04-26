@@ -76,6 +76,8 @@ const Login = () => {
       const { data } = await axios.post(`${SERVER_URL}/login`, values);
 
       localStorage.setItem("name", data.name);
+      localStorage.setItem("image", data.image);
+      localStorage.setItem("username", data.username);
       localStorage.setItem("x-auth-token", data["x-auth-token"]);
 
       router.push("/");

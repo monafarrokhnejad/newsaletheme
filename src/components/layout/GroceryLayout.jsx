@@ -31,6 +31,12 @@ const GroceryLayout = ({
 }) => {
   const router = useRouter();
 
+  useEffect(() => {
+    // checks if the user is authenticated
+    const isLogin = () => !!window.localStorage.getItem("x-auth-token");
+    isLogin() ? router.push("/") : router.push("/login");
+  }, []);
+
   const [isFixed, setIsFixed] = useState(false);
 
   const toggleIsFixed = useCallback((fixed) => {
